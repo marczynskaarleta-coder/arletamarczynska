@@ -66,6 +66,72 @@ export const articles: Article[] = [
     },
   },
   {
+    slug: "nowe-technologie-w-logistyce",
+    date: "2025-10-01",
+    readingTime: 5,
+    tags: ["AI", "TSL", "Technologia"],
+    featured: true,
+    published: true,
+    externalUrl: "https://www.logistykaimagazynowanie.pl",
+    source: "logistyka",
+    content: {
+      pl: {
+        title: "Nowe technologie w logistyce",
+        excerpt: "AI przestała być futurystyczną ciekawostką, a stała się fundamentem nowoczesnej logistyki. O centralnym magazynie danych, IoT i analizach predykcyjnych.",
+        category: "Technologia",
+      },
+      en: {
+        title: "New technologies in logistics",
+        excerpt: "AI is no longer a futuristic curiosity but the foundation of modern logistics. On central data warehouses, IoT, and predictive analytics.",
+        category: "Technology",
+      },
+    },
+  },
+  {
+    slug: "inteligentne-magazyny-energii",
+    date: "2025-10-01",
+    readingTime: 4,
+    tags: ["Energia", "Technologia", "Logistyka"],
+    featured: false,
+    published: true,
+    externalUrl: "https://www.logistykaimagazynowanie.pl",
+    source: "logistyka",
+    content: {
+      pl: {
+        title: "Inteligentne magazyny energii",
+        excerpt: "W świecie rosnących cen energii i przeciążeń sieci, inteligentne systemy zarządzania energią stają się kluczowe dla ciągłości operacji.",
+        category: "Technologia",
+      },
+      en: {
+        title: "Intelligent energy storage",
+        excerpt: "With rising energy costs and grid strain, intelligent energy management systems are becoming essential for operational continuity.",
+        category: "Technology",
+      },
+    },
+  },
+  {
+    slug: "tachografy-w-busach-rewolucja-na-drodze",
+    date: "2025-08-01",
+    readingTime: 5,
+    tags: ["TSL", "Tachografy", "Regulacje"],
+    featured: true,
+    published: true,
+    externalUrl: "https://truckbiznes.pl/wydania/truck-biznes-4-2025/",
+    source: "truckbiznes",
+    content: {
+      pl: {
+        title: "Tachografy w busach: rewolucja na drodze",
+        excerpt: "Od 1 lipca 2026 r. każdy bus 2,5–3,5 t wyjeżdżający za granicę z ładunkiem musi mieć tachograf G2 V2. Bez wyjątku, bez taryfy ulgowej.",
+        category: "Regulacje",
+      },
+      en: {
+        title: "Tachographs in vans: a road revolution",
+        excerpt: "From 1 July 2026, every 2.5–3.5 t van crossing borders with cargo must carry a G2 V2 tachograph. No exceptions, no grace period.",
+        category: "Regulation",
+      },
+    },
+  },
+  {
     slug: "miedzy-przetrwaniem-a-wspolpraca",
     date: "2025-11-01",
     readingTime: 5,
