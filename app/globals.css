@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap");
-
-:root {
-  --font-inter: "Inter", system-ui, sans-serif;
-  --font-dm-serif: "DM Serif Display", Georgia, serif;
-  --font-jetbrains: "JetBrains Mono", ui-monospace, monospace;
-}
-
 @layer base {
   html {
     font-family: var(--font-inter);
@@ -29,7 +21,6 @@
     color: #F7F5F0;
   }
 
-  /* Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
   }
