@@ -88,29 +88,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "ai-w-tsl",
-    status: "live",
-    year: "2025",
-    tags: ["AI", "TSL", "automatyzacja"],
-    externalUrl: "https://aiwtsl.excore.pl",
-    content: {
-      pl: {
-        name: "AI w TSL",
-        shortDescription:
-          "Praktyczne zastosowania sztucznej inteligencji w branży TSL, narzędzia i automatyzacje dla operatorów logistycznych.",
-        longDescription:
-          "Testowe środowisko i zasoby dla firm, które chcą sprawdzić AI w realiach operacji transportowych.",
-      },
-      en: {
-        name: "AI in TSL",
-        shortDescription:
-          "Practical AI applications in the TSL industry, tools and automations for logistics operators.",
-        longDescription:
-          "A testing ground and resource hub for companies exploring AI in real transport operations.",
-      },
-    },
-  },
-  {
     slug: "excore",
     status: "live",
     year: "2026",
@@ -155,6 +132,29 @@ export const projects: Project[] = [
           "An association connecting the TSL industry, focused on development, knowledge sharing, and building better working standards.",
         longDescription:
           "Connects operators, forwarders, and entrepreneurs who want to act deliberately rather than by chance.",
+      },
+    },
+  },
+  {
+    slug: "ai-w-tsl",
+    status: "live",
+    year: "2025",
+    tags: ["AI", "TSL", "gotowość"],
+    externalUrl: "https://aiwtsl.excore.pl",
+    content: {
+      pl: {
+        name: "AI w TSL",
+        shortDescription:
+          "Test gotowości na AI dla firm z branży TSL, sprawdź, gdzie stoi Twoja organizacja zanim wdrożysz pierwsze narzędzie.",
+        longDescription:
+          "Firmy wdrażają AI bez diagnozy. Ten test pokazuje, co jest gotowe, a co blokuje realne efekty.",
+      },
+      en: {
+        name: "AI in TSL",
+        shortDescription:
+          "An AI readiness test for TSL companies. Find out where your organisation stands before rolling out the first tool.",
+        longDescription:
+          "Companies deploy AI without any diagnosis. This test shows what is ready and what is blocking real results.",
       },
     },
   },
