@@ -13,6 +13,7 @@ export type Project = {
   tags: string[];
   externalUrl?: string;
   featured?: boolean;
+  logo?: string;
   content: { pl: ProjectContent; en: ProjectContent };
 };
 
@@ -24,6 +25,7 @@ export const projects: Project[] = [
     tags: ["TSL", "transport", "operacje"],
     externalUrl: "https://exportsy.pl",
     featured: true,
+    logo: "/logos/exportsy.png",
     content: {
       pl: {
         name: "eXportsy",
@@ -47,6 +49,7 @@ export const projects: Project[] = [
     year: "2023",
     tags: ["TSL", "transport", "outsourcing"],
     externalUrl: "https://exportsy.pl/outsourcing",
+    logo: "/logos/exportsy.png",
     content: {
       pl: {
         name: "Outsourcing Spedycyjny",
@@ -70,6 +73,7 @@ export const projects: Project[] = [
     year: "2023",
     tags: ["TSL", "promy", "transport"],
     externalUrl: "https://exportsy.pl/exferry",
+    logo: "/logos/exportsy.png",
     content: {
       pl: {
         name: "eXferry",
@@ -94,6 +98,7 @@ export const projects: Project[] = [
     tags: ["procesy", "operacje", "automatyzacja"],
     externalUrl: "https://excore.pl",
     featured: true,
+    logo: "/logos/excore.png",
     content: {
       pl: {
         name: "eXcore",
@@ -118,6 +123,7 @@ export const projects: Project[] = [
     tags: ["edukacja", "networking", "branża"],
     externalUrl: "https://nextgentsl.com",
     featured: true,
+    logo: "/logos/nextgentsl.png",
     content: {
       pl: {
         name: "NextGen TSL",
@@ -141,6 +147,7 @@ export const projects: Project[] = [
     year: "2025",
     tags: ["AI", "TSL", "gotowość"],
     externalUrl: "https://aiwtsl.excore.pl",
+    logo: "/logos/aiwtsl.png",
     content: {
       pl: {
         name: "AI w TSL",
