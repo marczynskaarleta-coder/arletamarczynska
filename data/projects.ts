@@ -2,8 +2,8 @@ export type ProjectStatus = "live" | "in-progress" | "concept" | "coming-soon";
 
 type ProjectContent = {
   name: string;
-  shortDescription: string; // homepage card
-  longDescription: string;  // projects page second paragraph
+  shortDescription: string;
+  longDescription: string;
 };
 
 export type Project = {
@@ -63,6 +63,29 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "next-gen-tsl",
+    status: "live",
+    year: "2025",
+    tags: ["edukacja", "networking", "branża"],
+    externalUrl: "https://nextgentsl.com",
+    content: {
+      pl: {
+        name: "NextGen TSL",
+        shortDescription:
+          "Stowarzyszenie łączące branżę TSL, skupione na rozwoju, wymianie doświadczeń i budowaniu lepszych standardów pracy.",
+        longDescription:
+          "Łączy operatorów, spedytorów i przedsiębiorców, którzy chcą działać świadomie, a nie przypadkowo.",
+      },
+      en: {
+        name: "NextGen TSL",
+        shortDescription:
+          "An association connecting the TSL industry, focused on development, knowledge sharing, and building better working standards.",
+        longDescription:
+          "Connects operators, forwarders, and entrepreneurs who want to act deliberately rather than by chance.",
+      },
+    },
+  },
+  {
     slug: "cbtl",
     status: "coming-soon",
     year: "2026",
@@ -81,28 +104,6 @@ export const projects: Project[] = [
           "A tool for verifying and analysing business entities, supporting operational decision-making.",
         longDescription:
           "Reduces collaboration risk and provides fast access to data that matters in practice.",
-      },
-    },
-  },
-  {
-    slug: "next-gen-tsl",
-    status: "live",
-    year: "2025",
-    tags: ["edukacja", "networking", "branża"],
-    content: {
-      pl: {
-        name: "NextGen TSL",
-        shortDescription:
-          "Stowarzyszenie łączące branżę TSL, skupione na rozwoju, wymianie doświadczeń i budowaniu lepszych standardów pracy.",
-        longDescription:
-          "Łączy operatorów, spedytorów i przedsiębiorców, którzy chcą działać świadomie, a nie przypadkowo.",
-      },
-      en: {
-        name: "NextGen TSL",
-        shortDescription:
-          "An association connecting the TSL industry, focused on development, knowledge sharing, and building better working standards.",
-        longDescription:
-          "Connects operators, forwarders, and entrepreneurs who want to act deliberately rather than by chance.",
       },
     },
   },

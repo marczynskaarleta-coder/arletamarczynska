@@ -51,12 +51,6 @@ export const dict = {
         description:
           "Projektowanie i wdrażanie rozwiązań, które realnie wspierają operacje, od koncepcji do działania.",
       },
-      {
-        id: "podcast",
-        label: "Podcast \"To się nie opłaca\"",
-        description:
-          "Rozmowy o decyzjach, błędach i realiach prowadzenia firm, bez teorii i bez filtrów. Premiera wkrótce.",
-      },
     ],
   },
   projects: {

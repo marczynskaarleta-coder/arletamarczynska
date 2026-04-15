@@ -50,7 +50,7 @@ export function About({ dict }: Props) {
         </p>
       </FadeIn>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-subtle">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-subtle">
         {dict.areas.map((area, i) => (
           <FadeIn key={area.id} delay={i * 0.07}>
             <div className="bg-canvas p-8 h-full flex flex-col gap-3 group hover:bg-surface transition-colors duration-300">

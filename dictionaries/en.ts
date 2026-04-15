@@ -53,12 +53,6 @@ export const dict: Dict = {
         description:
           "Designing and implementing solutions that genuinely support operations, from concept to deployment.",
       },
-      {
-        id: "podcast",
-        label: "Podcast \"To się nie opłaca\"",
-        description:
-          "Conversations about decisions, mistakes, and the realities of running a business. No theory, no filters. Coming soon.",
-      },
     ],
   },
   projects: {
