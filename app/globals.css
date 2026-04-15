@@ -4,30 +4,30 @@
 
 /* ─── Theme tokens ─────────────────────────────────────────── */
 :root {
-  --color-bg:      #f7f2ee;
-  --color-surface: #fdfaf7;
-  --color-ink:     #2b2928;
-  --color-muted:   #9a8070;
-  --color-subtle:  #e8d8ca;
-  --color-accent:  #913a27;
+  --color-bg:      #f4ede6;
+  --color-surface: #faf5f1;
+  --color-ink:     #1e1b19;
+  --color-muted:   #8a6e5e;
+  --color-subtle:  #ddc8b8;
+  --color-accent:  #8c3320;
 
   /* Hero background */
-  --grid-line:     rgba(43, 41, 40, 0.05);
-  --hero-glow-1:   rgba(145, 58, 39, 0.06);
-  --hero-glow-2:   rgba(43, 41, 40, 0.02);
+  --grid-line:     rgba(30, 27, 25, 0.07);
+  --hero-glow-1:   rgba(140, 51, 32, 0.09);
+  --hero-glow-2:   rgba(30, 27, 25, 0.03);
 }
 
 .dark {
-  --color-bg:      #1c1613;
-  --color-surface: #2b2928;
-  --color-ink:     #f2ece6;
-  --color-muted:   #9a8478;
-  --color-subtle:  #3d3028;
-  --color-accent:  #b36f3c;
+  --color-bg:      #181210;
+  --color-surface: #231c19;
+  --color-ink:     #f0e8e1;
+  --color-muted:   #9c857a;
+  --color-subtle:  #352620;
+  --color-accent:  #c46840;
 
-  --grid-line:     rgba(242, 236, 230, 0.04);
-  --hero-glow-1:   rgba(179, 111, 60, 0.07);
-  --hero-glow-2:   rgba(242, 236, 230, 0.02);
+  --grid-line:     rgba(240, 232, 225, 0.05);
+  --hero-glow-1:   rgba(196, 104, 64, 0.10);
+  --hero-glow-2:   rgba(240, 232, 225, 0.02);
 }
 
 /* ─── Base ──────────────────────────────────────────────────── */

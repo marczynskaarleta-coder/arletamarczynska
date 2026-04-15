@@ -82,6 +82,14 @@ export const dict = {
     motoDescription:
       "Nieformalne spotkania dla przedsiębiorców, miłośników dwóch kółek.",
     motoStatus: "Pierwsze spotkanie 6 czerwca, start w Andrychowie",
+    expertLabel: "Ekspert branżowy",
+    expertTitle: "Raporty i webinary branżowe",
+    expertDescription:
+      "Współudział w tworzeniu raportów branżowych, webinarów i analiz sektora TSL.",
+    expertLinks: [
+      { label: "PITD", url: "https://pitd.org.pl/pl" },
+      { label: "MAI Institute", url: "https://mai-inst.com" },
+    ],
   },
   newsletter: {
     sectionLabel: "Newsletter",

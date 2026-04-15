@@ -14,10 +14,10 @@ export function BeyondOps({ dict }: Props) {
         <SectionLabel>{dict.sectionLabel}</SectionLabel>
       </FadeIn>
 
-      <div className="grid md:grid-cols-2 gap-px bg-subtle">
+      <div className="grid md:grid-cols-3 gap-px bg-subtle">
         {/* Podcast */}
-        <FadeIn delay={0.07}>
-          <div className="bg-canvas p-8 md:p-10 flex flex-col gap-4 h-full group">
+        <FadeIn delay={0.05}>
+          <div className="bg-canvas p-8 flex flex-col gap-4 h-full">
             <span className="font-mono text-label text-muted uppercase tracking-widest">
               {dict.podcastLabel}
             </span>
@@ -28,15 +28,15 @@ export function BeyondOps({ dict }: Props) {
               {dict.podcastDescription}
             </p>
             <span className="inline-flex items-center gap-2 font-mono text-label text-muted/50 mt-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-muted/30" />
+              <span className="w-1.5 h-1.5 rounded-full bg-muted/25" />
               {dict.podcastStatus}
             </span>
           </div>
         </FadeIn>
 
         {/* Motorcycle meetups */}
-        <FadeIn delay={0.14}>
-          <div className="bg-canvas p-8 md:p-10 flex flex-col gap-4 h-full group">
+        <FadeIn delay={0.1}>
+          <div className="bg-canvas p-8 flex flex-col gap-4 h-full">
             <span className="font-mono text-label text-muted uppercase tracking-widest">
               {dict.motoLabel}
             </span>
@@ -50,6 +50,34 @@ export function BeyondOps({ dict }: Props) {
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               {dict.motoStatus}
             </span>
+          </div>
+        </FadeIn>
+
+        {/* Industry expert */}
+        <FadeIn delay={0.15}>
+          <div className="bg-canvas p-8 flex flex-col gap-4 h-full">
+            <span className="font-mono text-label text-muted uppercase tracking-widest">
+              {dict.expertLabel}
+            </span>
+            <h3 className="font-serif text-display-md text-ink leading-tight">
+              {dict.expertTitle}
+            </h3>
+            <p className="text-body-sm text-muted leading-relaxed flex-1">
+              {dict.expertDescription}
+            </p>
+            <div className="flex gap-4 mt-2">
+              {dict.expertLinks.map((link) => (
+                <a
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-label text-muted hover:text-ink border-b border-subtle hover:border-ink/40 pb-0.5 transition-colors duration-200"
+                >
+                  {link.label} ↗
+                </a>
+              ))}
+            </div>
           </div>
         </FadeIn>
       </div>

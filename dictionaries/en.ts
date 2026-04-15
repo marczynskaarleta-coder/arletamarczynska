@@ -84,6 +84,14 @@ export const dict: Dict = {
     motoDescription:
       "Informal gatherings for entrepreneurs who also ride.",
     motoStatus: "First meetup 6 June, starting in Andrychów",
+    expertLabel: "Industry expert",
+    expertTitle: "Industry reports and webinars",
+    expertDescription:
+      "Contributor to industry reports, webinars, and TSL sector analyses.",
+    expertLinks: [
+      { label: "PITD", url: "https://pitd.org.pl/pl" },
+      { label: "MAI Institute", url: "https://mai-inst.com" },
+    ],
   },
   newsletter: {
     sectionLabel: "Newsletter",

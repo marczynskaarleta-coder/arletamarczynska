@@ -44,6 +44,7 @@ export const projects: Project[] = [
     status: "live",
     year: "2026",
     tags: ["procesy", "operacje", "automatyzacja"],
+    externalUrl: "https://excore.pl",
     content: {
       pl: {
         name: "eXcore",
@@ -92,14 +93,14 @@ export const projects: Project[] = [
       pl: {
         name: "NextGen TSL",
         shortDescription:
-          "Inicjatywa dla branży TSL skupiona na rozwoju, wymianie doświadczeń i budowaniu lepszych standardów pracy.",
+          "Stowarzyszenie łączące branżę TSL, skupione na rozwoju, wymianie doświadczeń i budowaniu lepszych standardów pracy.",
         longDescription:
           "Łączy operatorów, spedytorów i przedsiębiorców, którzy chcą działać świadomie, a nie przypadkowo.",
       },
       en: {
         name: "NextGen TSL",
         shortDescription:
-          "An initiative for the TSL industry focused on development, knowledge sharing, and building better working standards.",
+          "An association connecting the TSL industry, focused on development, knowledge sharing, and building better working standards.",
         longDescription:
           "Connects operators, forwarders, and entrepreneurs who want to act deliberately rather than by chance.",
       },
