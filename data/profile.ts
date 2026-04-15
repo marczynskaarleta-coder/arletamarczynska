@@ -2,7 +2,7 @@
 export const profile = {
   name: "Arleta Marczynska",
   contact: {
-    email: "hello@arletamarczynska.pl",
+    email: "kontakt@arletamarczynska.pl",
   },
   social: {
     linkedin:  "https://www.linkedin.com/in/arleta-marczynska/",
