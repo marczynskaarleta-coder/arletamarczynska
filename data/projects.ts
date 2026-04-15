@@ -12,6 +12,7 @@ export type Project = {
   year: string;
   tags: string[];
   externalUrl?: string;
+  featured?: boolean;
   content: { pl: ProjectContent; en: ProjectContent };
 };
 
@@ -22,6 +23,7 @@ export const projects: Project[] = [
     year: "2022",
     tags: ["TSL", "transport", "operacje"],
     externalUrl: "https://exportsy.pl",
+    featured: true,
     content: {
       pl: {
         name: "eXportsy",
@@ -40,11 +42,81 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "outsourcing",
+    status: "live",
+    year: "2023",
+    tags: ["TSL", "transport", "outsourcing"],
+    externalUrl: "https://exportsy.pl/outsourcing",
+    content: {
+      pl: {
+        name: "Outsourcing Spedycyjny",
+        shortDescription:
+          "Obsługa operacji spedycyjnych dla firm, które nie chcą lub nie mogą budować własnego działu transportu.",
+        longDescription:
+          "Zewnętrzny zespół działający jak wewnętrzny dział spedycji, bez kosztów stałych i ryzyka kadrowego.",
+      },
+      en: {
+        name: "Forwarding Outsourcing",
+        shortDescription:
+          "Forwarding operations for companies that cannot or do not want to build their own transport department.",
+        longDescription:
+          "An external team acting as an in-house forwarding department, without fixed costs or staffing risk.",
+      },
+    },
+  },
+  {
+    slug: "exferry",
+    status: "live",
+    year: "2023",
+    tags: ["TSL", "promy", "transport"],
+    externalUrl: "https://exportsy.pl/exferry",
+    content: {
+      pl: {
+        name: "eXferry",
+        shortDescription:
+          "Kompleksowa obsługa przepraw promowych dla transportu drogowego, od rezerwacji przez dokumentację po koordynację.",
+        longDescription:
+          "Obsługa tras promowych jako element ciągłości łańcucha dostaw, nie dodatkowa komplikacja.",
+      },
+      en: {
+        name: "eXferry",
+        shortDescription:
+          "Full ferry crossing management for road transport, from bookings through documentation to coordination.",
+        longDescription:
+          "Ferry routes handled as part of supply chain continuity, not an added complication.",
+      },
+    },
+  },
+  {
+    slug: "ai-w-tsl",
+    status: "live",
+    year: "2025",
+    tags: ["AI", "TSL", "automatyzacja"],
+    externalUrl: "https://aiwtsl.excore.pl",
+    content: {
+      pl: {
+        name: "AI w TSL",
+        shortDescription:
+          "Praktyczne zastosowania sztucznej inteligencji w branży TSL, narzędzia i automatyzacje dla operatorów logistycznych.",
+        longDescription:
+          "Testowe środowisko i zasoby dla firm, które chcą sprawdzić AI w realiach operacji transportowych.",
+      },
+      en: {
+        name: "AI in TSL",
+        shortDescription:
+          "Practical AI applications in the TSL industry, tools and automations for logistics operators.",
+        longDescription:
+          "A testing ground and resource hub for companies exploring AI in real transport operations.",
+      },
+    },
+  },
+  {
     slug: "excore",
     status: "live",
     year: "2026",
     tags: ["procesy", "operacje", "automatyzacja"],
     externalUrl: "https://excore.pl",
+    featured: true,
     content: {
       pl: {
         name: "eXcore",
@@ -68,6 +140,7 @@ export const projects: Project[] = [
     year: "2025",
     tags: ["edukacja", "networking", "branża"],
     externalUrl: "https://nextgentsl.com",
+    featured: true,
     content: {
       pl: {
         name: "NextGen TSL",
@@ -89,6 +162,7 @@ export const projects: Project[] = [
     slug: "cbtl",
     status: "coming-soon",
     year: "2026",
+    featured: true,
     tags: ["dane", "weryfikacja", "B2B"],
     content: {
       pl: {
@@ -111,8 +185,12 @@ export const projects: Project[] = [
 
 export type LocalizedProject = Omit<Project, "content"> & ProjectContent;
 
-export function localizeProjects(locale: "pl" | "en"): LocalizedProject[] {
-  return projects.map(({ content, ...rest }) => ({
+export function localizeProjects(
+  locale: "pl" | "en",
+  { featuredOnly }: { featuredOnly?: boolean } = {}
+): LocalizedProject[] {
+  const list = featuredOnly ? projects.filter((p) => p.featured) : projects;
+  return list.map(({ content, ...rest }) => ({
     ...rest,
     ...content[locale],
   }));
