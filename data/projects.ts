@@ -167,9 +167,10 @@ export const projects: Project[] = [
   },
   {
     slug: "cbtl",
-    status: "coming-soon",
+    status: "live",
     year: "2026",
     featured: true,
+    externalUrl: "https://www.cbtl.pl/",
     tags: ["dane", "weryfikacja", "B2B"],
     content: {
       pl: {
