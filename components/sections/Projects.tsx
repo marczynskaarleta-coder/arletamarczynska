@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -67,13 +66,11 @@ function MarqueeItem({ project }: { project: LocalizedProject }) {
     <span className="group flex items-center gap-4 px-6 md:px-10">
       {project.logo ? (
         <span className={`flex items-center transition-opacity duration-200 ${isSoon ? "opacity-30" : "opacity-60 group-hover:opacity-100"}`}>
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={project.logo}
             alt={project.name}
-            width={0}
-            height={0}
-            sizes="200px"
-            style={{ width: "auto", height: "28px" }}
+            style={{ height: "28px", width: "auto" }}
             className="object-contain brightness-0 dark:invert"
           />
         </span>
