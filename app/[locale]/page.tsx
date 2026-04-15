@@ -26,7 +26,7 @@ export default async function HomePage({ params }: Props) {
 
   const l = locale as Locale;
   const dict = getDictionary(l);
-  const projectsData = localizeProjects(l, { featuredOnly: true });
+  const projectsData = localizeProjects(l);
   const articlesData = localizeArticles(l);
 
   return (

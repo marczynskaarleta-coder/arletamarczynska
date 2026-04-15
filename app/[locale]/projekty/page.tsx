@@ -4,6 +4,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Divider } from "@/components/ui/Divider";
 import { StatusBadge } from "@/components/ui/StatusBadge";
+import { BeyondOps } from "@/components/sections/BeyondOps";
 import { getDictionary } from "@/dictionaries";
 import { isValidLocale, type Locale } from "@/lib/i18n";
 import { localizeProjects, type LocalizedProject } from "@/data/projects";
@@ -154,6 +155,8 @@ export default async function ProjektyPage({ params }: Props) {
           ))}
         </div>
       </FadeIn>
+
+      <BeyondOps dict={dict.beyondOps} />
     </div>
   );
 }

@@ -1,11 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Divider } from "@/components/ui/Divider";
-import { StatusBadge } from "@/components/ui/StatusBadge";
 import type { LocalizedProject } from "@/data/projects";
 import type { Dict } from "@/dictionaries/pl";
 import type { Locale } from "@/lib/i18n";
@@ -17,33 +15,39 @@ type Props = {
 };
 
 export function Projects({ dict, locale, data }: Props) {
+  // Duplicate for seamless infinite loop
+  const items = [...data, ...data];
+
   return (
-    <section id="projekty" className="px-6 md:px-10 max-w-layout mx-auto py-section">
-      <Divider className="mb-16" />
+    <section id="projekty" className="py-section overflow-hidden">
+      <div className="px-6 md:px-10 max-w-layout mx-auto">
+        <Divider className="mb-16" />
 
-      <div className="flex items-end justify-between mb-14">
-        <FadeIn>
-          <SectionLabel>{dict.sectionLabel}</SectionLabel>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <Link
-            href={`/${locale}/projekty`}
-            className="text-body-sm text-muted hover:text-ink transition-colors duration-200 hidden sm:block"
-          >
-            {dict.viewAll} &rarr;
-          </Link>
-        </FadeIn>
-      </div>
-
-      <div className="grid sm:grid-cols-2 gap-5">
-        {data.map((project, i) => (
-          <FadeIn key={project.slug} delay={i * 0.07}>
-            <ProjectCard project={project} dict={dict} />
+        <div className="flex items-end justify-between mb-14">
+          <FadeIn>
+            <SectionLabel>{dict.sectionLabel}</SectionLabel>
           </FadeIn>
-        ))}
+          <FadeIn delay={0.1}>
+            <Link
+              href={`/${locale}/projekty`}
+              className="text-body-sm text-muted hover:text-ink transition-colors duration-200 hidden sm:block"
+            >
+              {dict.viewAll} &rarr;
+            </Link>
+          </FadeIn>
+        </div>
       </div>
 
-      <div className="mt-10 sm:hidden">
+      {/* Scrolling strip */}
+      <div className="border-y border-subtle py-5 overflow-hidden">
+        <div className="flex w-max animate-marquee">
+          {items.map((project, i) => (
+            <MarqueeItem key={`${project.slug}-${i}`} project={project} />
+          ))}
+        </div>
+      </div>
+
+      <div className="px-6 md:px-10 max-w-layout mx-auto mt-6 sm:hidden">
         <Link
           href={`/${locale}/projekty`}
           className="text-body-sm text-muted hover:text-ink transition-colors duration-200"
@@ -55,84 +59,53 @@ export function Projects({ dict, locale, data }: Props) {
   );
 }
 
-function ProjectCard({
-  project,
-  dict,
-}: {
-  project: LocalizedProject;
-  dict: Props["dict"];
-}) {
-  const badgeLabel =
-    project.status === "live"
-      ? dict.badges.live
-      : project.status === "in-progress"
-      ? dict.badges.inProgress
-      : project.status === "coming-soon"
-      ? dict.badges.comingSoon
-      : dict.badges.concept;
+function MarqueeItem({ project }: { project: LocalizedProject }) {
+  const isLive = project.status === "live";
+  const isSoon = project.status === "coming-soon";
 
-  const isDimmed = project.status === "coming-soon";
+  const inner = (
+    <span className="group flex items-center gap-3 px-10 cursor-default">
+      {/* Status dot */}
+      <span
+        className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors duration-300 ${
+          isLive
+            ? "bg-accent group-hover:bg-ink"
+            : isSoon
+            ? "bg-muted/30"
+            : "bg-muted/50"
+        }`}
+      />
 
-  return (
-    <motion.article
-      whileHover={{ y: isDimmed ? 0 : -3 }}
-      transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-      className={`group flex flex-col bg-surface border border-subtle rounded-sm p-7 h-full transition-all duration-300 ${
-        isDimmed
-          ? "opacity-70"
-          : "hover:border-ink/20 hover:shadow-[0_8px_32px_rgba(43,41,40,0.07)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
-      }`}
-    >
-      <div className="flex flex-wrap gap-2 mb-5">
-        {project.tags.slice(0, 2).map((tag) => (
-          <span key={tag} className="font-mono text-label text-muted bg-subtle px-2 py-0.5 rounded-sm">
-            {tag}
-          </span>
-        ))}
-        <span className="font-mono text-label text-muted/40 ml-auto self-center">
-          {project.year}
-        </span>
-      </div>
-
-      <h3
-        className={`font-serif text-display-md text-ink mb-3 transition-colors duration-200 ${
-          isDimmed ? "" : "group-hover:text-accent"
+      {/* Name */}
+      <span
+        className={`font-serif text-display-sm whitespace-nowrap transition-colors duration-200 ${
+          isSoon
+            ? "text-muted/40"
+            : "text-ink group-hover:text-accent"
         }`}
       >
         {project.name}
-      </h3>
+      </span>
 
-      <p className="text-body-sm text-muted leading-relaxed flex-1 mb-6">
-        {project.shortDescription}
-      </p>
-
-      <div className="flex items-center justify-between gap-4 pt-4 border-t border-subtle/70">
-        <StatusBadge status={project.status} label={badgeLabel} />
-
-        {project.externalUrl && !isDimmed ? (
-          <a
-            href={project.externalUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 font-mono text-label text-muted hover:text-ink transition-colors duration-200"
-          >
-            {dict.visitLabel}
-            <ExternalIcon />
-          </a>
-        ) : (
-          <span className="font-mono text-label text-muted/30">
-            {isDimmed ? dict.soonLabel : ""}
-          </span>
-        )}
-      </div>
-    </motion.article>
+      {/* Separator */}
+      <span className="text-subtle/60 font-mono text-label ml-6 select-none">
+        /
+      </span>
+    </span>
   );
-}
 
-function ExternalIcon() {
-  return (
-    <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden>
-      <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
+  if (isLive && project.externalUrl) {
+    return (
+      <a
+        href={project.externalUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={project.name}
+      >
+        {inner}
+      </a>
+    );
+  }
+
+  return <span>{inner}</span>;
 }

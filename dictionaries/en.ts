@@ -68,11 +68,6 @@ export const dict: Dict = {
   },
   beyondOps: {
     sectionLabel: "Beyond operations",
-    podcastLabel: "Podcast",
-    podcastTitle: "\"To się nie opłaca\"",
-    podcastDescription:
-      "Conversations about decisions, mistakes, and the realities of running a business. No theory, no filters.",
-    podcastStatus: "Coming soon",
     motoLabel: "Meetups",
     motoTitle: "Business Motorcycle Meetups",
     motoDescription:

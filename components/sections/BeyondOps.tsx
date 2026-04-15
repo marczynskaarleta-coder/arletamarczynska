@@ -14,28 +14,9 @@ export function BeyondOps({ dict }: Props) {
         <SectionLabel>{dict.sectionLabel}</SectionLabel>
       </FadeIn>
 
-      <div className="grid md:grid-cols-3 gap-px bg-subtle">
-        {/* Podcast */}
-        <FadeIn delay={0.05}>
-          <div className="bg-canvas p-8 flex flex-col gap-4 h-full">
-            <span className="font-mono text-label text-muted uppercase tracking-widest">
-              {dict.podcastLabel}
-            </span>
-            <h3 className="font-serif text-display-md text-ink leading-tight">
-              {dict.podcastTitle}
-            </h3>
-            <p className="text-body-sm text-muted leading-relaxed flex-1">
-              {dict.podcastDescription}
-            </p>
-            <span className="inline-flex items-center gap-2 font-mono text-label text-muted/50 mt-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-muted/25" />
-              {dict.podcastStatus}
-            </span>
-          </div>
-        </FadeIn>
-
+      <div className="grid md:grid-cols-2 gap-px bg-subtle">
         {/* Motorcycle meetups */}
-        <FadeIn delay={0.1}>
+        <FadeIn delay={0.05}>
           <div className="bg-canvas p-8 flex flex-col gap-4 h-full">
             <span className="font-mono text-label text-muted uppercase tracking-widest">
               {dict.motoLabel}
@@ -54,7 +35,7 @@ export function BeyondOps({ dict }: Props) {
         </FadeIn>
 
         {/* Industry expert */}
-        <FadeIn delay={0.15}>
+        <FadeIn delay={0.1}>
           <div className="bg-canvas p-8 flex flex-col gap-4 h-full">
             <span className="font-mono text-label text-muted uppercase tracking-widest">
               {dict.expertLabel}

@@ -66,11 +66,6 @@ export const dict = {
   },
   beyondOps: {
     sectionLabel: "Poza operacją",
-    podcastLabel: "Podcast",
-    podcastTitle: "\"To się nie opłaca\"",
-    podcastDescription:
-      "Rozmowy o decyzjach, błędach i realiach prowadzenia firm. Bez teorii i bez filtrów.",
-    podcastStatus: "Premiera wkrótce",
     motoLabel: "Spotkania",
     motoTitle: "Biznesowe Spotkania Motocyklowe",
     motoDescription:
