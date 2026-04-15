@@ -70,9 +70,11 @@ function MarqueeItem({ project }: { project: LocalizedProject }) {
           <Image
             src={project.logo}
             alt={project.name}
-            width={120}
-            height={40}
-            className="h-7 w-auto object-contain brightness-0 dark:invert"
+            width={0}
+            height={0}
+            sizes="200px"
+            style={{ width: "auto", height: "28px" }}
+            className="object-contain brightness-0 dark:invert"
           />
         </span>
       ) : (
