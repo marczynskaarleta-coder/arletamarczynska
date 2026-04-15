@@ -81,7 +81,7 @@ export default async function KontaktPage({ params }: Props) {
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <ContactForm dict={d} email={profile.contact.email} />
+          <ContactForm dict={d} />
         </FadeIn>
       </div>
     </div>

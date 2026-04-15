@@ -3,66 +3,73 @@
 import { useState } from "react";
 import type { Dict } from "@/dictionaries/pl";
 
-type Props = { dict: Dict["contactPage"]; email: string };
+type State = "idle" | "loading" | "success" | "error";
 
-export function ContactForm({ dict, email }: Props) {
-  const [name, setName] = useState("");
-  const [from, setFrom] = useState("");
-  const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
+type Props = { dict: Dict["contactPage"] };
 
-  function handleSubmit(e: React.FormEvent) {
+const FORMSPREE = "https://formspree.io/f/xeeveayv";
+
+export function ContactForm({ dict }: Props) {
+  const [state, setState] = useState<State>("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setState("loading");
 
-    const subject = encodeURIComponent(`Wiadomość od ${name}`);
-    const body = encodeURIComponent(
-      `Imię i nazwisko: ${name}\nEmail: ${from}\n\n${message}`
-    );
-
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    setSent(true);
+    try {
+      const res = await fetch(FORMSPREE, {
+        method: "POST",
+        body: new FormData(e.currentTarget),
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error();
+      setState("success");
+    } catch {
+      setState("error");
+    }
   }
-
-  const fields = [
-    {
-      id: "name",
-      label: dict.formNameLabel,
-      placeholder: dict.formNamePlaceholder,
-      type: "text" as const,
-      value: name,
-      onChange: (v: string) => setName(v),
-    },
-    {
-      id: "from",
-      label: dict.formEmailLabel,
-      placeholder: dict.formEmailPlaceholder,
-      type: "email" as const,
-      value: from,
-      onChange: (v: string) => setFrom(v),
-    },
-  ];
 
   const inputClass =
     "bg-transparent border-b border-subtle focus:border-ink outline-none py-3 text-body-sm text-ink placeholder:text-muted/40 transition-colors duration-200 w-full";
 
+  if (state === "success") {
+    return (
+      <div className="flex flex-col gap-3 py-4">
+        <span className="font-mono text-label text-accent">✓ Wiadomość wysłana</span>
+        <p className="text-body-sm text-muted">Odezwę się wkrótce.</p>
+      </div>
+    );
+  }
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-      {fields.map((f) => (
-        <div key={f.id} className="flex flex-col gap-2">
-          <label htmlFor={f.id} className="font-mono text-label text-muted uppercase tracking-wider">
-            {f.label}
-          </label>
-          <input
-            id={f.id}
-            type={f.type}
-            required
-            placeholder={f.placeholder}
-            value={f.value}
-            onChange={(e) => f.onChange(e.target.value)}
-            className={inputClass}
-          />
-        </div>
-      ))}
+      <div className="flex flex-col gap-2">
+        <label htmlFor="name" className="font-mono text-label text-muted uppercase tracking-wider">
+          {dict.formNameLabel}
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          placeholder={dict.formNamePlaceholder}
+          className={inputClass}
+        />
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <label htmlFor="email" className="font-mono text-label text-muted uppercase tracking-wider">
+          {dict.formEmailLabel}
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder={dict.formEmailPlaceholder}
+          className={inputClass}
+        />
+      </div>
 
       <div className="flex flex-col gap-2">
         <label htmlFor="message" className="font-mono text-label text-muted uppercase tracking-wider">
@@ -70,11 +77,10 @@ export function ContactForm({ dict, email }: Props) {
         </label>
         <textarea
           id="message"
+          name="message"
           rows={5}
           required
           placeholder={dict.formMessagePlaceholder}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -82,15 +88,14 @@ export function ContactForm({ dict, email }: Props) {
       <div className="flex flex-col gap-3">
         <button
           type="submit"
-          className="self-start mt-2 inline-flex items-center gap-2 font-medium text-body-sm text-ink border border-ink/20 hover:border-ink px-6 py-3 rounded-sm transition-colors duration-200"
+          disabled={state === "loading"}
+          className="self-start mt-2 inline-flex items-center gap-2 font-medium text-body-sm text-ink border border-ink/20 hover:border-ink disabled:opacity-50 px-6 py-3 rounded-sm transition-colors duration-200"
         >
-          {dict.formSubmitLabel} &rarr;
+          {state === "loading" ? "Wysyłam..." : `${dict.formSubmitLabel} →`}
         </button>
 
-        {sent && (
-          <p className="text-body-sm text-muted">
-            {dict.formNote}
-          </p>
+        {state === "error" && (
+          <p className="text-body-sm text-accent">Coś poszło nie tak. Napisz bezpośrednio na email.</p>
         )}
       </div>
     </form>
