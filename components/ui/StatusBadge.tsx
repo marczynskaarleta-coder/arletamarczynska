@@ -2,9 +2,10 @@ import { cn } from "@/lib/utils";
 import type { ProjectStatus } from "@/data/projects";
 
 const styles: Record<ProjectStatus, { dot: string; chip: string }> = {
-  live:          { dot: "bg-[#7b8d5b]", chip: "bg-[#eaf0e2] text-[#4a5e32] dark:bg-[#1e2a14] dark:text-[#a3b87c]" },
-  "in-progress": { dot: "bg-[#b36f3c]", chip: "bg-[#f5ede3] text-[#7a3a1a] dark:bg-[#2e1c0c] dark:text-[#d4956a]" },
-  concept:       { dot: "bg-muted/50",  chip: "bg-subtle text-muted" },
+  live:           { dot: "bg-[#7b8d5b]", chip: "bg-[#eaf0e2] text-[#4a5e32] dark:bg-[#1e2a14] dark:text-[#a3b87c]" },
+  "in-progress":  { dot: "bg-[#b36f3c]", chip: "bg-[#f5ede3] text-[#7a3a1a] dark:bg-[#2e1c0c] dark:text-[#d4956a]" },
+  concept:        { dot: "bg-muted/40",   chip: "bg-subtle text-muted" },
+  "coming-soon":  { dot: "bg-muted/30",   chip: "bg-subtle/60 text-muted/60 border border-dashed border-subtle" },
 };
 
 type Props = { status: ProjectStatus; label: string; className?: string };

@@ -8,7 +8,7 @@ import { Newsletter } from "@/components/sections/Newsletter";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { getDictionary } from "@/dictionaries";
 import { isValidLocale, type Locale } from "@/lib/i18n";
-import { localizeProjects } from "@/data/projects";
+import { localizePillars } from "@/data/projects";
 import { localizeArticles } from "@/data/articles";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -26,7 +26,7 @@ export default async function HomePage({ params }: Props) {
 
   const l = locale as Locale;
   const dict = getDictionary(l);
-  const projectsData = localizeProjects(l);
+  const projectsData = localizePillars(l);
   const articlesData = localizeArticles(l);
 
   return (

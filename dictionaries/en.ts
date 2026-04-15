@@ -93,6 +93,7 @@ export const dict: Dict = {
     live: "Live",
     inProgress: "In progress",
     concept: "Concept",
+    comingSoon: "Coming soon",
   },
   common: {
     minutesRead: "min read",
@@ -100,8 +101,9 @@ export const dict: Dict = {
     backToHome: "← Back to home",
   },
   projectsPage: {
-    breadcrumb: "Portfolio",
+    breadcrumb: "Ecosystem",
     heading: "Projects I'm building.",
+    subheading: "Three pillars. One direction.",
     visitLabel: "Visit",
     soonLabel: "Soon",
     whyItMattersLabel: "Why it matters",

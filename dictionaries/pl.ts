@@ -91,6 +91,7 @@ export const dict = {
     live: "Live",
     inProgress: "W trakcie",
     concept: "Koncepcja",
+    comingSoon: "Wkrótce",
   },
   common: {
     minutesRead: "min czytania",
@@ -98,8 +99,9 @@ export const dict = {
     backToHome: "← Wróć na stronę główną",
   },
   projectsPage: {
-    breadcrumb: "Portfolio",
+    breadcrumb: "Ekosystem",
     heading: "Projekty, które buduję.",
+    subheading: "Trzy obszary. Jeden kierunek.",
     visitLabel: "Odwiedź",
     soonLabel: "Wkrótce",
     whyItMattersLabel: "Dlaczego to ważne",
