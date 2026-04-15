@@ -15,7 +15,7 @@ export function About({ dict }: Props) {
       <div className="grid md:grid-cols-[280px_1fr] gap-8 md:gap-14 mb-10">
         {/* Photo */}
         <FadeIn>
-          <div className="relative w-full aspect-[4/5] overflow-hidden rounded-sm bg-subtle">
+          <div className="relative w-full h-56 md:h-auto md:aspect-[4/5] overflow-hidden rounded-sm bg-subtle">
             <Image
               src="/3.png"
               alt="Arleta Marczynska"
@@ -50,7 +50,7 @@ export function About({ dict }: Props) {
         </p>
       </FadeIn>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-subtle">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-subtle">
         {dict.areas.map((area, i) => (
           <FadeIn key={area.id} delay={i * 0.07}>
             <div className="bg-canvas p-6 h-full flex flex-col gap-2 group hover:bg-surface transition-colors duration-300">

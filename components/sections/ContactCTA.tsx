@@ -13,7 +13,7 @@ export function ContactCTA({ dict }: Props) {
       <FadeIn>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
           <div>
-            <h2 className="font-serif text-display-lg text-ink text-balance max-w-[20ch] leading-tight mb-2">
+            <h2 className="font-serif text-[clamp(1.8rem,5vw,4.5rem)] text-ink text-balance max-w-[20ch] leading-tight mb-2">
               {dict.heading}
             </h2>
             <p className="font-serif text-display-md text-accent italic">

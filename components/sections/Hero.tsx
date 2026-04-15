@@ -32,7 +32,7 @@ export function Hero({ dict, locale }: Props) {
         </motion.span>
 
         {/* Headline — word-by-word */}
-        <h1 className="font-serif text-display-xl text-ink leading-none mb-6 max-w-[16ch]">
+        <h1 className="font-serif text-[clamp(2.2rem,8vw,7rem)] text-ink leading-none tracking-tight mb-6 max-w-[16ch]">
           {words.map((word, i) => (
             <motion.span
               key={i}

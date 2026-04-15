@@ -14,7 +14,7 @@ export function BeyondOps({ dict }: Props) {
         <SectionLabel>{dict.sectionLabel}</SectionLabel>
       </FadeIn>
 
-      <div className="grid md:grid-cols-2 gap-px bg-subtle">
+      <div className="grid sm:grid-cols-2 gap-px bg-subtle">
         {/* Motorcycle meetups */}
         <FadeIn delay={0.05}>
           <div className="bg-canvas p-6 flex flex-col gap-3 h-full">

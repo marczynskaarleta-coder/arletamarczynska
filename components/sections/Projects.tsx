@@ -64,7 +64,7 @@ function MarqueeItem({ project }: { project: LocalizedProject }) {
   const isSoon = project.status === "coming-soon";
 
   const inner = (
-    <span className="group flex items-center gap-3 px-10 cursor-default">
+    <span className="group flex items-center gap-3 px-6 md:px-10 cursor-default">
       {/* Status dot */}
       <span
         className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors duration-300 ${
@@ -78,7 +78,7 @@ function MarqueeItem({ project }: { project: LocalizedProject }) {
 
       {/* Name */}
       <span
-        className={`font-serif text-display-sm whitespace-nowrap transition-colors duration-200 ${
+        className={`font-serif text-display-md whitespace-nowrap transition-colors duration-200 ${
           isSoon
             ? "text-muted/40"
             : "text-ink group-hover:text-accent"
@@ -88,7 +88,7 @@ function MarqueeItem({ project }: { project: LocalizedProject }) {
       </span>
 
       {/* Separator */}
-      <span className="text-subtle/60 font-mono text-label ml-6 select-none">
+      <span className="text-subtle/60 font-mono text-label ml-4 md:ml-6 select-none">
         /
       </span>
     </span>

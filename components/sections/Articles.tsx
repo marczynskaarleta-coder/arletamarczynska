@@ -37,7 +37,7 @@ export function Articles({ dict, locale, data }: Props) {
         </FadeIn>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-10 md:gap-8 divide-y divide-subtle md:divide-y-0">
         {featured.map((article, i) => (
           <FadeIn key={article.slug} delay={i * 0.1}>
             <ArticleCard article={article} dict={dict} index={i} />
@@ -61,7 +61,7 @@ function ArticleCard({
     <motion.article
       whileHover={{ y: -2 }}
       transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-      className="group flex flex-col h-full"
+      className="group flex flex-col h-full pt-10 md:pt-0 first:pt-0"
     >
       <div className="flex items-center gap-3 mb-5">
         <span className="font-mono text-label text-accent uppercase tracking-wider">
