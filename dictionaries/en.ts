@@ -104,10 +104,19 @@ export const dict: Dict = {
     heading: "Projects I'm building.",
     visitLabel: "Visit",
     soonLabel: "Soon",
+    whyItMattersLabel: "Why it matters",
+    filterAll: "All",
+    filterStatus: "Status",
+    filterCategory: "Category",
   },
   blogPage: {
-    breadcrumb: "I write about what I build",
-    heading: "Articles and notes.",
+    breadcrumb: "Notes and observations",
+    heading: "I write about what I build.",
+    categoryAll: "All",
+  },
+  blogPostPage: {
+    relatedLabel: "Related posts",
+    readMoreLabel: "Read more",
   },
   contactPage: {
     breadcrumb: "Contact",

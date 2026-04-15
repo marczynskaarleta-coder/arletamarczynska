@@ -102,10 +102,19 @@ export const dict = {
     heading: "Projekty, które buduję.",
     visitLabel: "Odwiedź",
     soonLabel: "Wkrótce",
+    whyItMattersLabel: "Dlaczego to ważne",
+    filterAll: "Wszystkie",
+    filterStatus: "Status",
+    filterCategory: "Kategoria",
   },
   blogPage: {
-    breadcrumb: "Piszę o tym, co buduję",
-    heading: "Artykuły i notatki.",
+    breadcrumb: "Notatki i obserwacje",
+    heading: "Piszę o tym, co buduję.",
+    categoryAll: "Wszystkie",
+  },
+  blogPostPage: {
+    relatedLabel: "Powiązane wpisy",
+    readMoreLabel: "Czytaj dalej",
   },
   contactPage: {
     breadcrumb: "Kontakt",

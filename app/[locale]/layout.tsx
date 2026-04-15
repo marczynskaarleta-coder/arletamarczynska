@@ -6,6 +6,7 @@ import { SetHtmlLang } from "@/components/ui/SetHtmlLang";
 import { getDictionary } from "@/dictionaries";
 import { locales, isValidLocale, type Locale } from "@/lib/i18n";
 import { siteConfig } from "@/data/siteConfig";
+import { profile } from "@/data/profile";
 
 type Props = {
   children: React.ReactNode;
@@ -20,19 +21,26 @@ export async function generateMetadata({ params }: Omit<Props, "children">): Pro
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   const dict = getDictionary(locale as Locale);
+  const ogLocale = locale === "pl" ? "pl_PL" : "en_US";
+  const altLocale = locale === "pl" ? "en_US" : "pl_PL";
   return {
-    title: { default: dict.meta.homeTitle, template: `%s | Arleta Marczynska` },
+    title: { default: dict.meta.homeTitle, template: `%s — Arleta Marczynska` },
     description: dict.meta.homeDescription,
+    authors: [{ name: profile.name, url: siteConfig.url }],
+    creator: profile.name,
+    metadataBase: new URL(siteConfig.url),
     alternates: {
       canonical: `${siteConfig.url}/${locale}`,
       languages: {
         pl: `${siteConfig.url}/pl`,
         en: `${siteConfig.url}/en`,
+        "x-default": `${siteConfig.url}/pl`,
       },
     },
     openGraph: {
       type: "website",
-      locale: locale === "pl" ? "pl_PL" : "en_US",
+      locale: ogLocale,
+      alternateLocale: [altLocale],
       url: `${siteConfig.url}/${locale}`,
       title: dict.meta.homeTitle,
       description: dict.meta.homeDescription,
@@ -43,6 +51,12 @@ export async function generateMetadata({ params }: Omit<Props, "children">): Pro
       title: dict.meta.homeTitle,
       description: dict.meta.homeDescription,
       creator: "@arletamarczynska",
+      site: "@arletamarczynska",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-image-preview": "large" },
     },
   };
 }

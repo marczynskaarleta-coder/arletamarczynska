@@ -2,8 +2,8 @@ import { cn } from "@/lib/utils";
 import type { ProjectStatus } from "@/data/projects";
 
 const styles: Record<ProjectStatus, { dot: string; chip: string }> = {
-  live:          { dot: "bg-[#3A7D55]", chip: "bg-[#E6F2EC] text-[#2D5A3D] dark:bg-[#1A3326] dark:text-[#7BC49A]" },
-  "in-progress": { dot: "bg-accent",    chip: "bg-[#F5EDDC] text-[#7A4A1E] dark:bg-[#2E2010] dark:text-[#D4A855]" },
+  live:          { dot: "bg-[#7b8d5b]", chip: "bg-[#eaf0e2] text-[#4a5e32] dark:bg-[#1e2a14] dark:text-[#a3b87c]" },
+  "in-progress": { dot: "bg-[#b36f3c]", chip: "bg-[#f5ede3] text-[#7a3a1a] dark:bg-[#2e1c0c] dark:text-[#d4956a]" },
   concept:       { dot: "bg-muted/50",  chip: "bg-subtle text-muted" },
 };
 
