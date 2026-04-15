@@ -22,19 +22,9 @@ export function Projects({ dict, locale, data }: Props) {
       <div className="px-6 md:px-10 max-w-layout mx-auto">
         <Divider className="mb-8" />
 
-        <div className="flex items-end justify-between mb-8">
-          <FadeIn>
-            <SectionLabel>{dict.sectionLabel}</SectionLabel>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <Link
-              href={`/${locale}/projekty`}
-              className="text-body-sm text-muted hover:text-ink transition-colors duration-200 hidden sm:block"
-            >
-              {dict.viewAll} &rarr;
-            </Link>
-          </FadeIn>
-        </div>
+        <FadeIn>
+          <SectionLabel>{dict.sectionLabel}</SectionLabel>
+        </FadeIn>
       </div>
 
       {/* Scrolling strip */}
@@ -46,13 +36,18 @@ export function Projects({ dict, locale, data }: Props) {
         </div>
       </div>
 
-      <div className="px-6 md:px-10 max-w-layout mx-auto mt-5 sm:hidden">
-        <Link
-          href={`/${locale}/projekty`}
-          className="text-body-sm text-muted hover:text-ink transition-colors duration-200"
-        >
-          {dict.viewAll} &rarr;
-        </Link>
+      <div className="px-6 md:px-10 max-w-layout mx-auto mt-8">
+        <FadeIn delay={0.1}>
+          <Link
+            href={`/${locale}/projekty`}
+            className="inline-flex items-center gap-2 text-body-sm font-medium text-ink border border-ink/20 hover:border-ink/60 hover:bg-ink/[0.03] px-5 py-2.5 rounded-sm transition-all duration-200"
+          >
+            {dict.viewAll}
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden>
+              <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
+        </FadeIn>
       </div>
     </section>
   );
