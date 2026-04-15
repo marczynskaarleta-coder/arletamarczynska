@@ -49,7 +49,6 @@ export const projects: Project[] = [
     year: "2023",
     tags: ["TSL", "transport", "outsourcing"],
     externalUrl: "https://exportsy.pl/outsourcing",
-    logo: "/logos/exportsy.png",
     content: {
       pl: {
         name: "Outsourcing Spedycyjny",

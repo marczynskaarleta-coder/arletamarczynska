@@ -70,7 +70,11 @@ function MarqueeItem({ project }: { project: LocalizedProject }) {
           <img
             src={project.logo}
             alt={project.name}
-            style={{ height: "28px", width: "auto" }}
+            style={{
+              height: project.slug === "excore" ? "36px" : "26px",
+              width: "auto",
+              maxWidth: "140px",
+            }}
             className="object-contain brightness-0 dark:invert"
           />
         </span>
