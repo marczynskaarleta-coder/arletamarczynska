@@ -31,7 +31,7 @@ export function Hero({ dict, about }: Props) {
       />
 
       <div className="relative z-10 px-6 md:px-10 max-w-layout mx-auto w-full">
-        <div className="grid md:grid-cols-[1fr_380px] lg:grid-cols-[1fr_440px] gap-12 md:gap-20 items-center">
+        <div className="grid md:grid-cols-[1fr_250px] lg:grid-cols-[1fr_290px] gap-12 md:gap-20 items-center">
 
           {/* LEFT — name + description */}
           <div className="flex flex-col order-2 md:order-1">
