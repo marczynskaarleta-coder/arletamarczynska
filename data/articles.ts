@@ -66,6 +66,28 @@ export const articles: Article[] = [
     },
   },
   {
+    slug: "miedzy-przetrwaniem-a-wspolpraca",
+    date: "2025-11-01",
+    readingTime: 5,
+    tags: ["TSL", "Współpraca", "Zarządzanie"],
+    featured: true,
+    published: true,
+    externalUrl: "https://truckbiznes.pl/wp-content/uploads/2025/11/TruckBiznes_2025_06.pdf",
+    source: "truckbiznes",
+    content: {
+      pl: {
+        title: "Między przetrwaniem a współpracą",
+        excerpt: "O tym, jak w branży opartej na presji i czasie budować współpracę, która działa także w trudnych momentach, a nie tylko wtedy, gdy jest spokojnie.",
+        category: "Branża TSL",
+      },
+      en: {
+        title: "Between survival and collaboration",
+        excerpt: "On building partnerships in a pressure-driven, time-sensitive industry that hold up not just in easy times, but when things get hard.",
+        category: "Industry",
+      },
+    },
+  },
+  {
     slug: "sztuczna-inteligencja-na-kolach",
     date: "2025-08-20",
     readingTime: 7,
