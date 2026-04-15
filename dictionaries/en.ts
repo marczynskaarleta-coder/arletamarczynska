@@ -4,7 +4,7 @@ export const dict: Dict = {
   meta: {
     homeTitle: "Arleta Marczynska — Founder & Operator",
     homeDescription:
-      "Operator, founder, and strategic builder. I build systems and digital products for logistics, technology, and regulated markets.",
+      "Operator and founder. I organise processes, data, and ways of working so that a business runs predictably.",
   },
   nav: {
     projects: "Projects",
@@ -17,41 +17,47 @@ export const dict: Dict = {
     roleLabel: "Founder & Operator",
     headline: "I build systems that work.",
     subheadline:
-      "Operator, founder, and strategic builder. I design processes, digital products, and business structures for sectors where precision is non-negotiable.",
+      "Operator and founder. I organise processes, data, and ways of working so that a business runs predictably, not by chance.",
     ctaProjects: "See projects",
-    ctaNewsletter: "Join the newsletter",
+    ctaContact: "Get in touch",
     scrollHint: "Scroll",
   },
   about: {
     sectionLabel: "About",
     statement:
-      "I combine systems thinking with operational execution. I work where processes must be reliable and mistakes have real costs.",
-    bio: "I work at the intersection of technology, operations, and regulated markets. My projects connect process automation, business intelligence, and AI tools with hard sector logic.",
+      "I combine systems thinking with operational execution. Where a process fails, cost begins.",
+    bio: "I organise processes, data, and ways of working so that a business runs predictably, not by chance.",
     areasLabel: "Focus areas",
     areas: [
       {
-        id: "logistics",
-        label: "Logistics & Freight",
+        id: "transport",
+        label: "Transport & Operations (TSL)",
         description:
-          "Optimising freight processes, documentation, and compliance in domestic and international transport.",
+          "Organisation of domestic and international road freight and management of forwarding operations, from order through documentation and crossings to settlement, including customs and warehouse solutions.",
       },
       {
-        id: "ai-processes",
-        label: "AI & Automation",
+        id: "processes",
+        label: "Work systems & processes",
         description:
-          "Deploying AI tools in business operations. Automating documentation, reporting, and operational decisions.",
+          "Building standards, onboarding, and ways of working that do not depend on individual people.",
+      },
+      {
+        id: "data",
+        label: "Decisions & data",
+        description:
+          "Verification, analysis, and use of data in everyday operational work.",
       },
       {
         id: "digital-products",
-        label: "Digital Products",
+        label: "Tools & digital products",
         description:
-          "Designing and building SaaS platforms, B2B tools, and internal systems from concept to production.",
+          "Designing and implementing solutions that genuinely support operations, from concept to deployment.",
       },
       {
-        id: "data-intelligence",
-        label: "Business Intelligence",
+        id: "podcast",
+        label: "Podcast \"To się nie opłaca\"",
         description:
-          "Corporate databases, entity verification, monitoring, and lead intelligence for the B2B market.",
+          "Conversations about decisions, mistakes, and the realities of running a business. No theory, no filters. Coming soon.",
       },
     ],
   },
@@ -66,16 +72,29 @@ export const dict: Dict = {
     viewAll: "All articles",
     readLabel: "Read",
   },
+  beyondOps: {
+    sectionLabel: "Beyond operations",
+    podcastLabel: "Podcast",
+    podcastTitle: "\"To się nie opłaca\"",
+    podcastDescription:
+      "Conversations about decisions, mistakes, and the realities of running a business. No theory, no filters.",
+    podcastStatus: "Coming soon",
+    motoLabel: "Meetups",
+    motoTitle: "Business Motorcycle Meetups",
+    motoDescription:
+      "Informal gatherings for entrepreneurs who also ride.",
+    motoStatus: "First meetup 6 June, starting in Andrychów",
+  },
   newsletter: {
     sectionLabel: "Newsletter",
-    heading: "Operations, products, and technology — occasionally.",
+    heading: "Operations, products, and technology, occasionally.",
     body: "No noise, no weekly spam. I write when I have something specific to say about logistics, AI, or building products.",
     emailLabel: "Email address",
     emailPlaceholder: "your@email.com",
     submitLabel: "Subscribe",
     submittingLabel: "Subscribing...",
-    successMessage: "Done — you're on the list.",
-    successBody: "I'll reach out when there's something worth saying.",
+    successMessage: "Done, you are on the list.",
+    successBody: "I will reach out when there is something worth saying.",
     errorMessage: "Something went wrong. Please try again.",
     privacyNote:
       "No spam. Unsubscribe anytime. Your data stays private.",
@@ -83,6 +102,7 @@ export const dict: Dict = {
   contact: {
     sectionLabel: "Contact",
     heading: "Have a project to discuss?",
+    subheading: "Let's talk.",
     emailLabel: "Email",
   },
   footer: {
@@ -97,13 +117,13 @@ export const dict: Dict = {
   },
   common: {
     minutesRead: "min read",
-    backToBlog: "← Writing",
-    backToHome: "← Back to home",
+    backToBlog: "Writing",
+    backToHome: "Back to home",
   },
   projectsPage: {
-    breadcrumb: "Ecosystem",
-    heading: "Projects I'm building.",
-    subheading: "Three pillars. One direction.",
+    breadcrumb: "Projects",
+    heading: "Projects I am building.",
+    subheading: "Tools, systems, and initiatives.",
     visitLabel: "Visit",
     soonLabel: "Soon",
     whyItMattersLabel: "Why it matters",
@@ -124,17 +144,18 @@ export const dict: Dict = {
     breadcrumb: "Contact",
     heading: "Let's talk about what you want to build.",
     description:
-      "Available for product collaboration, operational consulting, and interesting projects at the intersection of technology and business.",
-    replyTime: "I usually respond within 24–48 hours.",
+      "Available for product collaboration, operational consulting, and projects at the intersection of technology and operations.",
+    replyTime: "I usually respond within 24-48 hours.",
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
+    instagramLabel: "Instagram",
     formNameLabel: "Full name",
     formNamePlaceholder: "Jane Smith",
     formEmailLabel: "Email",
     formEmailPlaceholder: "jane@company.com",
     formMessageLabel: "Message",
     formMessagePlaceholder:
-      "Briefly describe what you do and what you're looking for...",
+      "Briefly describe what you do and what you are looking for...",
     formSubmitLabel: "Send message",
     formNote:
       "This form opens your default email client. You can also write directly to the address above.",
@@ -142,7 +163,7 @@ export const dict: Dict = {
   notFound: {
     label: "404",
     heading: "Nothing here.",
-    body: "The page you're looking for doesn't exist or has been moved.",
-    cta: "← Back to home",
+    body: "The page you are looking for does not exist or has been moved.",
+    cta: "Back to home",
   },
 };

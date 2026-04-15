@@ -1,22 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Divider } from "@/components/ui/Divider";
-import type { LocalizedPillar } from "@/data/projects";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import type { LocalizedProject } from "@/data/projects";
 import type { Dict } from "@/dictionaries/pl";
 import type { Locale } from "@/lib/i18n";
 
 type Props = {
   dict: Dict["projects"] & { badges: Dict["badges"] };
   locale: Locale;
-  data: LocalizedPillar[];
-};
-
-const STATUS_DOT: Record<string, string> = {
-  live:          "bg-[#7b8d5b]",
-  "in-progress": "bg-[#b36f3c]",
-  concept:       "bg-muted/35",
-  "coming-soon": "bg-muted/20",
+  data: LocalizedProject[];
 };
 
 export function Projects({ dict, locale, data }: Props) {
@@ -38,57 +35,15 @@ export function Projects({ dict, locale, data }: Props) {
         </FadeIn>
       </div>
 
-      {/* 3-column pillar overview */}
-      <div className="grid md:grid-cols-3 gap-px bg-subtle">
-        {data.map((pillar, i) => (
-          <FadeIn key={pillar.id} delay={i * 0.08}>
-            <div className="bg-canvas p-7 md:p-8 flex flex-col gap-5 h-full">
-              {/* Pillar header */}
-              <div>
-                <span className="font-mono text-label text-accent block mb-3">
-                  {pillar.number}
-                </span>
-                <h3 className="font-serif text-display-md text-ink leading-tight">
-                  {pillar.title}
-                </h3>
-              </div>
-
-              {/* Project list */}
-              <ul className="flex flex-col gap-2.5 mt-1">
-                {pillar.projects.map((project) => (
-                  <li key={project.slug} className="flex items-center gap-2.5">
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full shrink-0 ${STATUS_DOT[project.status] ?? "bg-muted/30"}`}
-                    />
-                    <span
-                      className={`text-body-sm ${
-                        project.status === "coming-soon"
-                          ? "text-muted/40"
-                          : "text-muted"
-                      }`}
-                    >
-                      {project.name}
-                    </span>
-                    {project.status === "live" && project.externalUrl && (
-                      <a
-                        href={project.externalUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-mono text-label text-accent hover:text-ink transition-colors duration-150 ml-auto shrink-0"
-                        aria-label={`${project.name} — ${dict.visitLabel}`}
-                      >
-                        ↗
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
+      <div className="grid sm:grid-cols-2 gap-5">
+        {data.map((project, i) => (
+          <FadeIn key={project.slug} delay={i * 0.07}>
+            <ProjectCard project={project} dict={dict} />
           </FadeIn>
         ))}
       </div>
 
-      <div className="mt-8 sm:hidden">
+      <div className="mt-10 sm:hidden">
         <Link
           href={`/${locale}/projekty`}
           className="text-body-sm text-muted hover:text-ink transition-colors duration-200"
@@ -97,5 +52,87 @@ export function Projects({ dict, locale, data }: Props) {
         </Link>
       </div>
     </section>
+  );
+}
+
+function ProjectCard({
+  project,
+  dict,
+}: {
+  project: LocalizedProject;
+  dict: Props["dict"];
+}) {
+  const badgeLabel =
+    project.status === "live"
+      ? dict.badges.live
+      : project.status === "in-progress"
+      ? dict.badges.inProgress
+      : project.status === "coming-soon"
+      ? dict.badges.comingSoon
+      : dict.badges.concept;
+
+  const isDimmed = project.status === "coming-soon";
+
+  return (
+    <motion.article
+      whileHover={{ y: isDimmed ? 0 : -3 }}
+      transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+      className={`group flex flex-col bg-surface border border-subtle rounded-sm p-7 h-full transition-all duration-300 ${
+        isDimmed
+          ? "opacity-70"
+          : "hover:border-ink/20 hover:shadow-[0_8px_32px_rgba(43,41,40,0.07)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
+      }`}
+    >
+      <div className="flex flex-wrap gap-2 mb-5">
+        {project.tags.slice(0, 2).map((tag) => (
+          <span key={tag} className="font-mono text-label text-muted bg-subtle px-2 py-0.5 rounded-sm">
+            {tag}
+          </span>
+        ))}
+        <span className="font-mono text-label text-muted/40 ml-auto self-center">
+          {project.year}
+        </span>
+      </div>
+
+      <h3
+        className={`font-serif text-display-md text-ink mb-3 transition-colors duration-200 ${
+          isDimmed ? "" : "group-hover:text-accent"
+        }`}
+      >
+        {project.name}
+      </h3>
+
+      <p className="text-body-sm text-muted leading-relaxed flex-1 mb-6">
+        {project.shortDescription}
+      </p>
+
+      <div className="flex items-center justify-between gap-4 pt-4 border-t border-subtle/70">
+        <StatusBadge status={project.status} label={badgeLabel} />
+
+        {project.externalUrl && !isDimmed ? (
+          <a
+            href={project.externalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 font-mono text-label text-muted hover:text-ink transition-colors duration-200"
+          >
+            {dict.visitLabel}
+            <ExternalIcon />
+          </a>
+        ) : (
+          <span className="font-mono text-label text-muted/30">
+            {isDimmed ? dict.soonLabel : ""}
+          </span>
+        )}
+      </div>
+    </motion.article>
+  );
+}
+
+function ExternalIcon() {
+  return (
+    <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden>
+      <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }

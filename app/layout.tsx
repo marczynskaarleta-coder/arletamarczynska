@@ -38,7 +38,7 @@ const personJsonLd = {
   url: siteConfig.url,
   email: profile.contact.email,
   jobTitle: "Founder & Operator",
-  sameAs: [profile.social.linkedin, profile.social.twitter],
+  sameAs: [profile.social.linkedin, profile.social.instagram],
   knowsAbout: ["Logistics", "Freight Forwarding", "AI", "SaaS", "Digital Products", "B2B"],
   worksFor: {
     "@type": "Organization",

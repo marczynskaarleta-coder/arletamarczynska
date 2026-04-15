@@ -4,11 +4,11 @@ import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Projects } from "@/components/sections/Projects";
 import { Articles } from "@/components/sections/Articles";
-import { Newsletter } from "@/components/sections/Newsletter";
+import { BeyondOps } from "@/components/sections/BeyondOps";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { getDictionary } from "@/dictionaries";
 import { isValidLocale, type Locale } from "@/lib/i18n";
-import { localizePillars } from "@/data/projects";
+import { localizeProjects } from "@/data/projects";
 import { localizeArticles } from "@/data/articles";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -26,7 +26,7 @@ export default async function HomePage({ params }: Props) {
 
   const l = locale as Locale;
   const dict = getDictionary(l);
-  const projectsData = localizePillars(l);
+  const projectsData = localizeProjects(l);
   const articlesData = localizeArticles(l);
 
   return (
@@ -39,7 +39,7 @@ export default async function HomePage({ params }: Props) {
         data={projectsData}
       />
       <Articles dict={dict.articles} locale={l} data={articlesData} />
-      <Newsletter dict={dict.newsletter} />
+      <BeyondOps dict={dict.beyondOps} />
       <ContactCTA dict={dict.contact} />
     </>
   );

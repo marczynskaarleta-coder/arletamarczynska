@@ -6,7 +6,7 @@ import { Divider } from "@/components/ui/Divider";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { getDictionary } from "@/dictionaries";
 import { isValidLocale, type Locale } from "@/lib/i18n";
-import { localizePillars, type LocalizedPillar, type LocalizedProject } from "@/data/projects";
+import { localizeProjects, type LocalizedProject } from "@/data/projects";
 import { siteConfig } from "@/data/siteConfig";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -22,9 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// ─── Project row ─────────────────────────────────────────────────
-
-function ProjectRow({
+function ProjectCard({
   project,
   visitLabel,
   badges,
@@ -45,47 +43,54 @@ function ProjectRow({
   const isDimmed = project.status === "coming-soon";
 
   return (
-    <div
-      className={`group grid sm:grid-cols-[180px_1fr_auto] sm:items-center gap-3 sm:gap-6 py-5 border-b border-subtle last:border-b-0 ${
-        isDimmed ? "opacity-60" : ""
+    <article
+      className={`border-b border-subtle py-10 grid md:grid-cols-[auto_1fr_auto] md:items-start gap-6 md:gap-12 ${
+        isDimmed ? "opacity-70" : ""
       }`}
     >
-      {/* Status + name */}
-      <div className="flex items-center gap-3">
-        <StatusBadge status={project.status} label={badgeLabel} />
-      </div>
+      <span className="font-mono text-label text-muted/50 pt-1 w-12 shrink-0">
+        {project.year}
+      </span>
 
-      {/* Name + description */}
       <div>
-        <p
-          className={`text-body-sm font-medium mb-0.5 transition-colors duration-200 ${
-            isDimmed
-              ? "text-muted/60"
-              : "text-ink group-hover:text-accent"
-          }`}
-        >
+        <div className="flex flex-wrap items-center gap-3 mb-4">
+          <StatusBadge status={project.status} label={badgeLabel} />
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="font-mono text-label bg-subtle text-muted px-2 py-0.5 rounded-sm"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <h2 className="font-serif text-display-md text-ink mb-3">
           {project.name}
+        </h2>
+
+        <p className="text-body-sm text-muted max-w-prose mb-2">
+          {project.shortDescription}
         </p>
-        <p className="text-body-sm text-muted/70 leading-snug">
-          {project.description}
+        <p className="text-body-sm text-muted/60 max-w-prose">
+          {project.longDescription}
         </p>
       </div>
 
-      {/* Action */}
-      <div className="sm:text-right">
-        {project.externalUrl && project.status === "live" ? (
+      <div className="pt-1 shrink-0">
+        {project.externalUrl && !isDimmed ? (
           <a
             href={project.externalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 font-mono text-label text-muted hover:text-ink border border-subtle hover:border-ink/30 px-3 py-1.5 rounded-sm transition-colors duration-200"
+            className="inline-flex items-center gap-2 text-body-sm font-medium text-muted hover:text-ink border border-subtle hover:border-ink/30 px-4 py-2 rounded-sm transition-colors duration-200"
           >
             {visitLabel}
-            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden>
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden>
               <path
                 d="M2 10L10 2M10 2H4M10 2V8"
                 stroke="currentColor"
-                strokeWidth="1.3"
+                strokeWidth="1.2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
@@ -97,56 +102,9 @@ function ProjectRow({
           </span>
         ) : null}
       </div>
-    </div>
+    </article>
   );
 }
-
-// ─── Pillar section ──────────────────────────────────────────────
-
-function PillarSection({
-  pillar,
-  visitLabel,
-  badges,
-  index,
-}: {
-  pillar: LocalizedPillar;
-  visitLabel: string;
-  badges: { live: string; inProgress: string; concept: string; comingSoon: string };
-  index: number;
-}) {
-  return (
-    <FadeIn delay={index * 0.1}>
-      <div className="grid md:grid-cols-[280px_1fr] gap-10 md:gap-20 py-14 md:py-16 border-b border-subtle last:border-b-0">
-        {/* Left: pillar info */}
-        <div className="md:pt-1">
-          <span className="font-mono text-label text-accent block mb-4">
-            {pillar.number}
-          </span>
-          <h2 className="font-serif text-display-md text-ink leading-tight mb-4">
-            {pillar.title}
-          </h2>
-          <p className="text-body-sm text-muted leading-relaxed">
-            {pillar.intro}
-          </p>
-        </div>
-
-        {/* Right: project list */}
-        <div>
-          {pillar.projects.map((project) => (
-            <ProjectRow
-              key={project.slug}
-              project={project}
-              visitLabel={visitLabel}
-              badges={badges}
-            />
-          ))}
-        </div>
-      </div>
-    </FadeIn>
-  );
-}
-
-// ─── Page ────────────────────────────────────────────────────────
 
 export default async function ProjektyPage({ params }: Props) {
   const { locale } = await params;
@@ -154,7 +112,7 @@ export default async function ProjektyPage({ params }: Props) {
 
   const l = locale as Locale;
   const dict = getDictionary(l);
-  const pillars = localizePillars(l);
+  const data = localizeProjects(l);
   const d = dict.projectsPage;
 
   const badges = {
@@ -166,13 +124,12 @@ export default async function ProjektyPage({ params }: Props) {
 
   return (
     <div className="min-h-dvh pt-32 pb-section px-6 md:px-10 max-w-layout mx-auto">
-      {/* Header */}
       <div className="mb-20">
         <FadeIn>
           <SectionLabel className="mb-6 block">{d.breadcrumb}</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.08}>
-          <h1 className="font-serif text-display-lg text-ink text-balance max-w-[22ch] mb-4">
+          <h1 className="font-serif text-display-lg text-ink text-balance max-w-[22ch] mb-3">
             {d.heading}
           </h1>
         </FadeIn>
@@ -185,18 +142,18 @@ export default async function ProjektyPage({ params }: Props) {
 
       <Divider />
 
-      {/* Pillar sections */}
-      <div>
-        {pillars.map((pillar, i) => (
-          <PillarSection
-            key={pillar.id}
-            pillar={pillar}
-            visitLabel={d.visitLabel}
-            badges={badges}
-            index={i}
-          />
-        ))}
-      </div>
+      <FadeIn delay={0.1}>
+        <div className="flex flex-col">
+          {data.map((project) => (
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              visitLabel={d.visitLabel}
+              badges={badges}
+            />
+          ))}
+        </div>
+      </FadeIn>
     </div>
   );
 }

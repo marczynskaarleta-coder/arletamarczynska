@@ -10,7 +10,6 @@ const NAV_HREFS = [
   { key: "projects" as const, href: "/projekty" },
   { key: "blog"     as const, href: "/blog"     },
   { key: "contact"  as const, href: "/kontakt"  },
-  { key: "newsletter" as const, href: "#newsletter" },
 ];
 
 export function Footer({ locale, nav, footer }: Props) {
@@ -30,7 +29,7 @@ export function Footer({ locale, nav, footer }: Props) {
             {NAV_HREFS.map(({ key, href }) => (
               <Link
                 key={href}
-                href={href.startsWith("#") ? href : `/${locale}${href}`}
+                href={`/${locale}${href}`}
                 className="text-body-sm text-muted hover:text-ink transition-colors duration-200"
               >
                 {nav[key]}
@@ -40,11 +39,25 @@ export function Footer({ locale, nav, footer }: Props) {
 
           <div className="flex flex-col items-start md:items-end gap-3">
             <div className="flex gap-5">
-              <a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer" className="font-mono text-label text-muted hover:text-ink transition-colors duration-200 uppercase tracking-wider">LinkedIn</a>
-              <a href={profile.social.twitter} target="_blank" rel="noopener noreferrer" className="font-mono text-label text-muted hover:text-ink transition-colors duration-200 uppercase tracking-wider">Twitter</a>
+              <a
+                href={profile.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-label text-muted hover:text-ink transition-colors duration-200 uppercase tracking-wider"
+              >
+                LinkedIn
+              </a>
+              <a
+                href={profile.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-label text-muted hover:text-ink transition-colors duration-200 uppercase tracking-wider"
+              >
+                Instagram
+              </a>
             </div>
             <p className="font-mono text-label text-muted/50">
-              &copy; {year} — {footer.copyright}
+              &copy; {year} {footer.copyright}
             </p>
           </div>
         </div>

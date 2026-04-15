@@ -12,9 +12,14 @@ export function ContactCTA({ dict }: Props) {
 
       <FadeIn>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
-          <h2 className="font-serif text-display-lg text-ink text-balance max-w-[20ch] leading-tight">
-            {dict.heading}
-          </h2>
+          <div>
+            <h2 className="font-serif text-display-lg text-ink text-balance max-w-[20ch] leading-tight mb-2">
+              {dict.heading}
+            </h2>
+            <p className="font-serif text-display-md text-accent italic">
+              {dict.subheading}
+            </p>
+          </div>
 
           <div className="flex flex-col gap-5 shrink-0">
             <a
@@ -39,12 +44,12 @@ export function ContactCTA({ dict }: Props) {
                 LinkedIn
               </a>
               <a
-                href={profile.social.twitter}
+                href={profile.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-body-sm text-muted hover:text-ink transition-colors duration-200"
               >
-                Twitter / X
+                Instagram
               </a>
             </div>
           </div>

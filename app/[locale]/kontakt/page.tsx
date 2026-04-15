@@ -53,10 +53,27 @@ export default async function KontaktPage({ params }: Props) {
               </span>
             </a>
 
-            <a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer" className="group flex flex-col gap-1">
+            <a
+              href={profile.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col gap-1"
+            >
               <span className="font-mono text-label text-muted uppercase tracking-wider mb-1">{d.linkedinLabel}</span>
               <span className="text-body-lg font-medium text-ink group-hover:text-accent transition-colors duration-200">
                 Arleta Marczynska
+              </span>
+            </a>
+
+            <a
+              href={profile.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col gap-1"
+            >
+              <span className="font-mono text-label text-muted uppercase tracking-wider mb-1">{d.instagramLabel}</span>
+              <span className="text-body-lg font-medium text-ink group-hover:text-accent transition-colors duration-200">
+                @arleta_marczynska
               </span>
             </a>
           </div>
@@ -71,8 +88,8 @@ export default async function KontaktPage({ params }: Props) {
           >
             {(
               [
-                { id: "name",    label: d.formNameLabel,    placeholder: d.formNamePlaceholder,    type: "text",  name: "name" },
-                { id: "email",   label: d.formEmailLabel,   placeholder: d.formEmailPlaceholder,   type: "email", name: "email" },
+                { id: "name",  label: d.formNameLabel,  placeholder: d.formNamePlaceholder,  type: "text",  name: "name"  },
+                { id: "email", label: d.formEmailLabel, placeholder: d.formEmailPlaceholder, type: "email", name: "email" },
               ] as const
             ).map((f) => (
               <div key={f.id} className="flex flex-col gap-2">

@@ -5,8 +5,7 @@ export const profile = {
     email: "hello@arletamarczynska.pl",
   },
   social: {
-    linkedin: "https://linkedin.com/in/arletamarczynska",
-    twitter:  "https://twitter.com/arletamarczynska",
-    github:   "https://github.com/arletamarczynska",
+    linkedin:  "https://www.linkedin.com/in/arleta-marczynska/",
+    instagram: "https://www.instagram.com/arleta_marczynska/",
   },
 } as const;

@@ -71,10 +71,10 @@ export function Hero({ dict, locale }: Props) {
               <ArrowRight />
             </Link>
             <Link
-              href="#newsletter"
+              href="#kontakt"
               className="inline-flex items-center gap-2 text-body-sm font-medium text-accent border border-accent/30 hover:border-accent/70 hover:bg-accent/[0.04] px-6 py-3 rounded-sm transition-all duration-200"
             >
-              {dict.ctaNewsletter}
+              {dict.ctaContact}
             </Link>
           </motion.div>
         </div>

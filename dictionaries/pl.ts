@@ -2,7 +2,7 @@ export const dict = {
   meta: {
     homeTitle: "Arleta Marczynska — Founder & Operator",
     homeDescription:
-      "Operator, founder i strateg. Buduję systemy i produkty cyfrowe dla logistyki, technologii i rynków regulowanych.",
+      "Operator i founder. Porządkuję procesy, dane i sposób pracy tak, żeby firma działała przewidywalnie.",
   },
   nav: {
     projects: "Projekty",
@@ -15,41 +15,47 @@ export const dict = {
     roleLabel: "Founder & Operator",
     headline: "Buduję systemy, które działają.",
     subheadline:
-      "Operator, founder i strateg. Projektuję procesy, produkty cyfrowe i struktury biznesowe dla sektorów, gdzie błędy kosztują realnie.",
+      "Operator i founder. Porządkuję procesy, dane i sposób pracy tak, żeby firma działała przewidywalnie, nie przypadkowo.",
     ctaProjects: "Zobacz projekty",
-    ctaNewsletter: "Dołącz do newslettera",
+    ctaContact: "Napisz do mnie",
     scrollHint: "Przewiń",
   },
   about: {
     sectionLabel: "Kim jestem",
     statement:
-      "Łączę myślenie systemowe z egzekucją operacyjną. Działam tam, gdzie procesy muszą być niezawodne, a błędy kosztują realnie.",
-    bio: "Pracuję na styku technologii, operacji i rynków regulowanych. Moje projekty łączą automatyzację procesów, dane biznesowe i narzędzia AI z twardą logiką branżową.",
+      "Łączę myślenie systemowe z egzekucją operacyjną. Tam, gdzie proces nie działa, zaczyna się koszt.",
+    bio: "Porządkuję procesy, dane i sposób pracy tak, żeby firma działała przewidywalnie, nie przypadkowo.",
     areasLabel: "Obszary działania",
     areas: [
       {
-        id: "logistics",
-        label: "Logistyka i TSL",
+        id: "transport",
+        label: "Transport i operacje (TSL)",
         description:
-          "Optymalizacja procesów spedycyjnych, dokumentacji i compliance w transporcie krajowym i międzynarodowym.",
+          "Organizacja transportu drogowego krajowego i międzynarodowego oraz zarządzanie operacją spedycyjną, od zlecenia przez dokumentację i przeprawy po rozliczenie, w tym obsługa celna i rozwiązania magazynowe.",
       },
       {
-        id: "ai-processes",
-        label: "AI i automatyzacja",
+        id: "processes",
+        label: "System pracy i procesy",
         description:
-          "Wdrożenia narzędzi AI w operacjach biznesowych. Automatyzacja dokumentacji, raportowania i decyzji operacyjnych.",
+          "Budowanie standardów, onboardingu i sposobu działania, który nie zależy od pojedynczych osób.",
+      },
+      {
+        id: "data",
+        label: "Decyzje i dane",
+        description:
+          "Weryfikacja, analiza i wykorzystanie danych w codziennej pracy operacyjnej.",
       },
       {
         id: "digital-products",
-        label: "Produkty cyfrowe",
+        label: "Narzędzia i produkty cyfrowe",
         description:
-          "Projektowanie i budowanie SaaS, platform B2B i narzędzi wewnętrznych od konceptu do produkcji.",
+          "Projektowanie i wdrażanie rozwiązań, które realnie wspierają operacje, od koncepcji do działania.",
       },
       {
-        id: "data-intelligence",
-        label: "Dane i wywiad biznesowy",
+        id: "podcast",
+        label: "Podcast \"To się nie opłaca\"",
         description:
-          "Bazy danych podmiotów gospodarczych, weryfikacja, monitoring i lead intelligence dla rynku B2B.",
+          "Rozmowy o decyzjach, błędach i realiach prowadzenia firm, bez teorii i bez filtrów. Premiera wkrótce.",
       },
     ],
   },
@@ -64,15 +70,28 @@ export const dict = {
     viewAll: "Wszystkie artykuły",
     readLabel: "Czytaj",
   },
+  beyondOps: {
+    sectionLabel: "Poza operacją",
+    podcastLabel: "Podcast",
+    podcastTitle: "\"To się nie opłaca\"",
+    podcastDescription:
+      "Rozmowy o decyzjach, błędach i realiach prowadzenia firm. Bez teorii i bez filtrów.",
+    podcastStatus: "Premiera wkrótce",
+    motoLabel: "Spotkania",
+    motoTitle: "Biznesowe Spotkania Motocyklowe",
+    motoDescription:
+      "Nieformalne spotkania dla przedsiębiorców, miłośników dwóch kółek.",
+    motoStatus: "Pierwsze spotkanie 6 czerwca, start w Andrychowie",
+  },
   newsletter: {
     sectionLabel: "Newsletter",
-    heading: "Operacje, produkty i technologia — raz na jakiś czas.",
+    heading: "Operacje, produkty i technologia, raz na jakiś czas.",
     body: "Bez szumu, bez cotygodniowego spamu. Piszę wtedy, gdy mam coś konkretnego do powiedzenia o logistyce, AI lub budowaniu produktów.",
     emailLabel: "Adres email",
     emailPlaceholder: "twoj@email.pl",
     submitLabel: "Zapisz się",
     submittingLabel: "Wysyłam...",
-    successMessage: "Gotowe — jesteś na liście.",
+    successMessage: "Gotowe, jesteś na liście.",
     successBody: "Odezwę się, gdy będzie co powiedzieć.",
     errorMessage: "Coś poszło nie tak. Spróbuj ponownie.",
     privacyNote:
@@ -81,6 +100,7 @@ export const dict = {
   contact: {
     sectionLabel: "Kontakt",
     heading: "Masz projekt do omówienia?",
+    subheading: "Porozmawiajmy.",
     emailLabel: "Email",
   },
   footer: {
@@ -95,13 +115,13 @@ export const dict = {
   },
   common: {
     minutesRead: "min czytania",
-    backToBlog: "← Artykuły",
-    backToHome: "← Wróć na stronę główną",
+    backToBlog: "Artykuły",
+    backToHome: "Wróć na stronę główną",
   },
   projectsPage: {
-    breadcrumb: "Ekosystem",
+    breadcrumb: "Projekty",
     heading: "Projekty, które buduję.",
-    subheading: "Trzy obszary. Jeden kierunek.",
+    subheading: "Narzędzia, systemy i inicjatywy.",
     visitLabel: "Odwiedź",
     soonLabel: "Wkrótce",
     whyItMattersLabel: "Dlaczego to ważne",
@@ -122,10 +142,11 @@ export const dict = {
     breadcrumb: "Kontakt",
     heading: "Porozmawiajmy o tym, co chcesz zbudować.",
     description:
-      "Jestem dostępna w sprawach współpracy produktowej, konsultacji operacyjnych oraz ciekawych projektów na styku technologii i biznesu.",
-    replyTime: "Odpowiadam zwykle w ciągu 24–48 godzin.",
+      "Jestem dostępna w sprawach współpracy produktowej, konsultacji operacyjnych oraz projektów na styku technologii i operacji.",
+    replyTime: "Odpowiadam zwykle w ciągu 24-48 godzin.",
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
+    instagramLabel: "Instagram",
     formNameLabel: "Imię i nazwisko",
     formNamePlaceholder: "Jan Kowalski",
     formEmailLabel: "Email",
@@ -141,7 +162,7 @@ export const dict = {
     label: "404",
     heading: "Nie ma tu nic.",
     body: "Strona, której szukasz, nie istnieje lub została przeniesiona.",
-    cta: "← Wróć na stronę główną",
+    cta: "Wróć na stronę główną",
   },
 };
 
