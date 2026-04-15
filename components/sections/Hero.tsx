@@ -3,16 +3,15 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { HeroBackground } from "@/components/ui/HeroBackground";
-import { profile } from "@/data/profile";
+import type { Dict } from "@/dictionaries/pl";
+import type { Locale } from "@/lib/i18n";
+
+type Props = { dict: Dict["hero"]; locale: Locale };
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-function stagger(i: number, base = 0.15, step = 0.08) {
-  return base + i * step;
-}
-
-export function Hero() {
-  const words = profile.headline.split(" ");
+export function Hero({ dict, locale }: Props) {
+  const words = dict.headline.split(" ");
 
   return (
     <section
@@ -29,17 +28,17 @@ export function Hero() {
           transition={{ duration: 0.5, ease, delay: 0.1 }}
           className="font-mono text-label uppercase tracking-widest text-muted mb-8 block"
         >
-          {profile.name} &mdash; Founder &amp; Operator
+          {dict.roleLabel}
         </motion.span>
 
-        {/* Headline — animated word-by-word */}
+        {/* Headline — word-by-word */}
         <h1 className="font-serif text-display-xl text-ink leading-none mb-10 max-w-[16ch]">
           {words.map((word, i) => (
             <motion.span
               key={i}
               initial={{ opacity: 0, y: 36, skewY: 1 }}
               animate={{ opacity: 1, y: 0, skewY: 0 }}
-              transition={{ duration: 0.7, ease, delay: stagger(i, 0.2, 0.07) }}
+              transition={{ duration: 0.7, ease, delay: 0.2 + i * 0.07 }}
               className="inline-block mr-[0.25em] last:mr-0"
             >
               {word}
@@ -55,7 +54,7 @@ export function Hero() {
             transition={{ duration: 0.65, ease, delay: 0.82 }}
             className="text-body-lg text-muted max-w-[52ch]"
           >
-            {profile.subheadline}
+            {dict.subheadline}
           </motion.p>
 
           <motion.div
@@ -65,17 +64,17 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-start sm:items-center gap-4 shrink-0"
           >
             <Link
-              href="/projekty"
-              className="inline-flex items-center gap-2 text-body-sm font-medium text-ink bg-ink/[0.06] hover:bg-ink/[0.11] border border-ink/[0.14] hover:border-ink/30 px-6 py-3 rounded-sm transition-all duration-200"
+              href={`/${locale}/projekty`}
+              className="inline-flex items-center gap-2 text-body-sm font-medium text-ink bg-ink/[0.06] hover:bg-ink/[0.1] border border-ink/[0.14] hover:border-ink/30 px-6 py-3 rounded-sm transition-all duration-200"
             >
-              Zobacz projekty
+              {dict.ctaProjects}
               <ArrowRight />
             </Link>
             <Link
               href="#newsletter"
               className="inline-flex items-center gap-2 text-body-sm font-medium text-accent border border-accent/30 hover:border-accent/70 hover:bg-accent/[0.04] px-6 py-3 rounded-sm transition-all duration-200"
             >
-              Dołącz do newslettera
+              {dict.ctaNewsletter}
             </Link>
           </motion.div>
         </div>
@@ -92,7 +91,7 @@ export function Hero() {
             transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
             className="w-px h-10 bg-gradient-to-b from-transparent via-muted/40 to-transparent"
           />
-          Przewiń
+          {dict.scrollHint}
         </motion.div>
       </div>
     </section>

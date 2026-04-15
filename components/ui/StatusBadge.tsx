@@ -1,34 +1,16 @@
 import { cn } from "@/lib/utils";
 import type { ProjectStatus } from "@/data/projects";
 
-const config: Record<
-  ProjectStatus,
-  { label: string; dot: string; chip: string }
-> = {
-  live: {
-    label: "Live",
-    dot: "bg-[#3A7D55]",
-    chip: "bg-[#E6F2EC] text-[#2D5A3D]",
-  },
-  "in-progress": {
-    label: "W trakcie",
-    dot: "bg-[#C8963E]",
-    chip: "bg-[#F5EDDC] text-[#7A4A1E]",
-  },
-  concept: {
-    label: "Koncepcja",
-    dot: "bg-[#A8A49C]",
-    chip: "bg-subtle text-muted",
-  },
+const styles: Record<ProjectStatus, { dot: string; chip: string }> = {
+  live:          { dot: "bg-[#3A7D55]", chip: "bg-[#E6F2EC] text-[#2D5A3D] dark:bg-[#1A3326] dark:text-[#7BC49A]" },
+  "in-progress": { dot: "bg-accent",    chip: "bg-[#F5EDDC] text-[#7A4A1E] dark:bg-[#2E2010] dark:text-[#D4A855]" },
+  concept:       { dot: "bg-muted/50",  chip: "bg-subtle text-muted" },
 };
 
-type Props = {
-  status: ProjectStatus;
-  className?: string;
-};
+type Props = { status: ProjectStatus; label: string; className?: string };
 
-export function StatusBadge({ status, className }: Props) {
-  const { label, dot, chip } = config[status];
+export function StatusBadge({ status, label, className }: Props) {
+  const { dot, chip } = styles[status];
   return (
     <span
       className={cn(
