@@ -68,6 +68,30 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "exstorage",
+    status: "live",
+    year: "2023",
+    tags: ["TSL", "magazyn", "logistyka"],
+    externalUrl: "https://exportsy.pl/magazyny",
+    logo: "/logos/exportsy.png",
+    content: {
+      pl: {
+        name: "eXstorage",
+        shortDescription:
+          "Obsługa magazynowa i usługi fulfillment dla firm, które potrzebują elastycznego zaplecza logistycznego.",
+        longDescription:
+          "Magazynowanie i dystrybucja jako element łańcucha dostaw, bez konieczności własnej infrastruktury.",
+      },
+      en: {
+        name: "eXstorage",
+        shortDescription:
+          "Warehousing and fulfilment services for companies that need flexible logistics capacity.",
+        longDescription:
+          "Storage and distribution as part of the supply chain, without the need for your own infrastructure.",
+      },
+    },
+  },
+  {
     slug: "exferry",
     status: "live",
     year: "2023",
@@ -171,6 +195,7 @@ export const projects: Project[] = [
     year: "2026",
     featured: true,
     externalUrl: "https://www.cbtl.pl/",
+    logo: "/logos/cbtl.svg",
     tags: ["dane", "weryfikacja", "B2B"],
     content: {
       pl: {
