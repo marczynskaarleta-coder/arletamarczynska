@@ -24,7 +24,7 @@ export const dict = {
     sectionLabel: "Kim jestem",
     statement:
       "Łączę myślenie systemowe z egzekucją operacyjną. Tam, gdzie proces nie działa, zaczyna się koszt.",
-    bio: "Od ponad 16 lat działam w branży TSL, łącząc doświadczenie operacyjne z projektowaniem procesów i narzędzi, które realnie usprawniają codzienną pracę firm.",
+    bio: "Od ponad 16 lat działam w branży TSL. Współtworzę rozwiązania i projektuję procesy, które porządkują codzienną operację.",
     areasLabel: "Obszary działania",
     areas: [
       {

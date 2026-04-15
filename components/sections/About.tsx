@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Divider } from "@/components/ui/Divider";
 import type { Dict } from "@/dictionaries/pl";
 
@@ -8,44 +6,11 @@ type Props = { dict: Dict["about"] };
 
 export function About({ dict }: Props) {
   return (
-    <section id="about" className="px-6 md:px-10 max-w-layout mx-auto py-section">
+    <section id="areas" className="px-6 md:px-10 max-w-layout mx-auto py-section">
       <Divider className="mb-8" />
 
-      {/* Top: photo + text */}
-      <div className="grid md:grid-cols-[280px_1fr] gap-8 md:gap-14 mb-10">
-        {/* Photo */}
-        <FadeIn>
-          <div className="relative w-full h-56 md:h-auto md:aspect-[4/5] overflow-hidden rounded-sm bg-subtle">
-            <Image
-              src="/3.png"
-              alt="Arleta Marczynska"
-              fill
-              sizes="(max-width: 768px) 100vw, 320px"
-              className="object-cover object-top"
-              priority
-            />
-          </div>
-        </FadeIn>
-
-        {/* Text */}
-        <div className="flex flex-col justify-center">
-          <FadeIn delay={0.05}>
-            <SectionLabel className="mb-4 block">{dict.sectionLabel}</SectionLabel>
-          </FadeIn>
-          <FadeIn delay={0.12}>
-            <p className="text-display-md font-serif text-ink text-balance leading-snug mb-3">
-              {dict.statement}
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <p className="text-body-lg text-muted max-w-prose">{dict.bio}</p>
-          </FadeIn>
-        </div>
-      </div>
-
-      {/* Focus areas */}
-      <FadeIn delay={0.05}>
-        <p className="font-mono text-label text-muted uppercase tracking-widest mb-5">
+      <FadeIn className="mb-6">
+        <p className="font-mono text-label text-muted uppercase tracking-widest">
           {dict.areasLabel}
         </p>
       </FadeIn>

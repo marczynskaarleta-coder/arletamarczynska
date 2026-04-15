@@ -33,7 +33,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
-      <Hero dict={dict.hero} locale={l} />
+      <Hero dict={dict.hero} about={dict.about} locale={l} />
       <About dict={dict.about} />
       <Projects
         dict={{ ...dict.projects, badges: dict.badges }}

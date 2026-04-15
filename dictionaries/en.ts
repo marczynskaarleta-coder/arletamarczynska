@@ -26,7 +26,7 @@ export const dict: Dict = {
     sectionLabel: "About",
     statement:
       "I combine systems thinking with operational execution. Where a process fails, cost begins.",
-    bio: "With over 16 years in the TSL industry, I combine operational experience with designing processes and tools that genuinely improve how companies work day to day.",
+    bio: "Over 16 years in TSL. I co-create solutions and design processes that bring order to daily operations.",
     areasLabel: "Focus areas",
     areas: [
       {
