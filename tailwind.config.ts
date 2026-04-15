@@ -31,8 +31,8 @@ const config: Config = {
         "label":      ["0.75rem",   { lineHeight: "1",   letterSpacing: "0.12em" }],
       },
       spacing: {
-        section:    "clamp(5rem, 10vw, 10rem)",
-        "section-sm": "clamp(3rem, 6vw, 6rem)",
+        section:    "clamp(2.5rem, 5vw, 5rem)",
+        "section-sm": "clamp(1.5rem, 3vw, 3rem)",
       },
       maxWidth: {
         prose:  "68ch",

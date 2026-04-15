@@ -21,9 +21,9 @@ export function Articles({ dict, locale, data }: Props) {
 
   return (
     <section id="artykuly" className="px-6 md:px-10 max-w-layout mx-auto py-section">
-      <Divider className="mb-16" />
+      <Divider className="mb-8" />
 
-      <div className="flex items-end justify-between mb-14">
+      <div className="flex items-end justify-between mb-8">
         <FadeIn>
           <SectionLabel>{dict.sectionLabel}</SectionLabel>
         </FadeIn>

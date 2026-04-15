@@ -8,16 +8,16 @@ type Props = { dict: Dict["beyondOps"] };
 export function BeyondOps({ dict }: Props) {
   return (
     <section id="poza-operacja" className="px-6 md:px-10 max-w-layout mx-auto py-section">
-      <Divider className="mb-16" />
+      <Divider className="mb-8" />
 
-      <FadeIn className="mb-14">
+      <FadeIn className="mb-8">
         <SectionLabel>{dict.sectionLabel}</SectionLabel>
       </FadeIn>
 
       <div className="grid md:grid-cols-2 gap-px bg-subtle">
         {/* Motorcycle meetups */}
         <FadeIn delay={0.05}>
-          <div className="bg-canvas p-8 flex flex-col gap-4 h-full">
+          <div className="bg-canvas p-6 flex flex-col gap-3 h-full">
             <span className="font-mono text-label text-muted uppercase tracking-widest">
               {dict.motoLabel}
             </span>
@@ -36,7 +36,7 @@ export function BeyondOps({ dict }: Props) {
 
         {/* Industry expert */}
         <FadeIn delay={0.1}>
-          <div className="bg-canvas p-8 flex flex-col gap-4 h-full">
+          <div className="bg-canvas p-6 flex flex-col gap-3 h-full">
             <span className="font-mono text-label text-muted uppercase tracking-widest">
               {dict.expertLabel}
             </span>

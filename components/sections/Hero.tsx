@@ -16,7 +16,7 @@ export function Hero({ dict, locale }: Props) {
   return (
     <section
       id="hero"
-      className="relative min-h-[95dvh] flex flex-col justify-end pb-16 md:pb-28 pt-32 overflow-hidden"
+      className="relative min-h-[80dvh] flex flex-col justify-end pb-10 md:pb-16 pt-24 overflow-hidden"
     >
       <HeroBackground />
 
@@ -26,13 +26,13 @@ export function Hero({ dict, locale }: Props) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease, delay: 0.1 }}
-          className="font-mono text-label uppercase tracking-widest text-muted mb-8 block"
+          className="font-mono text-label uppercase tracking-widest text-muted mb-4 block"
         >
           {dict.roleLabel}
         </motion.span>
 
         {/* Headline — word-by-word */}
-        <h1 className="font-serif text-display-xl text-ink leading-none mb-10 max-w-[16ch]">
+        <h1 className="font-serif text-display-xl text-ink leading-none mb-6 max-w-[16ch]">
           {words.map((word, i) => (
             <motion.span
               key={i}
@@ -84,7 +84,7 @@ export function Hero({ dict, locale }: Props) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="hidden md:flex items-center gap-3 mt-14 text-label text-muted/60 uppercase tracking-widest"
+          className="hidden md:flex items-center gap-3 mt-8 text-label text-muted/60 uppercase tracking-widest"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}

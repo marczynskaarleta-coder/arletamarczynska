@@ -8,7 +8,7 @@ type Props = { dict: Dict["contact"] };
 export function ContactCTA({ dict }: Props) {
   return (
     <section id="kontakt" className="px-6 md:px-10 max-w-layout mx-auto py-section">
-      <Divider className="mb-16" />
+      <Divider className="mb-8" />
 
       <FadeIn>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">

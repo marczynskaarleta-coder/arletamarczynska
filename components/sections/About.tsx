@@ -9,10 +9,10 @@ type Props = { dict: Dict["about"] };
 export function About({ dict }: Props) {
   return (
     <section id="about" className="px-6 md:px-10 max-w-layout mx-auto py-section">
-      <Divider className="mb-16" />
+      <Divider className="mb-8" />
 
       {/* Top: photo + text */}
-      <div className="grid md:grid-cols-[320px_1fr] gap-12 md:gap-20 mb-20">
+      <div className="grid md:grid-cols-[280px_1fr] gap-8 md:gap-14 mb-10">
         {/* Photo */}
         <FadeIn>
           <div className="relative w-full aspect-[4/5] overflow-hidden rounded-sm bg-subtle">
@@ -30,10 +30,10 @@ export function About({ dict }: Props) {
         {/* Text */}
         <div className="flex flex-col justify-center">
           <FadeIn delay={0.05}>
-            <SectionLabel className="mb-8 block">{dict.sectionLabel}</SectionLabel>
+            <SectionLabel className="mb-4 block">{dict.sectionLabel}</SectionLabel>
           </FadeIn>
           <FadeIn delay={0.12}>
-            <p className="text-display-md font-serif text-ink text-balance leading-snug mb-6">
+            <p className="text-display-md font-serif text-ink text-balance leading-snug mb-3">
               {dict.statement}
             </p>
           </FadeIn>
@@ -45,7 +45,7 @@ export function About({ dict }: Props) {
 
       {/* Focus areas */}
       <FadeIn delay={0.05}>
-        <p className="font-mono text-label text-muted uppercase tracking-widest mb-8">
+        <p className="font-mono text-label text-muted uppercase tracking-widest mb-5">
           {dict.areasLabel}
         </p>
       </FadeIn>
@@ -53,7 +53,7 @@ export function About({ dict }: Props) {
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-subtle">
         {dict.areas.map((area, i) => (
           <FadeIn key={area.id} delay={i * 0.07}>
-            <div className="bg-canvas p-8 h-full flex flex-col gap-3 group hover:bg-surface transition-colors duration-300">
+            <div className="bg-canvas p-6 h-full flex flex-col gap-2 group hover:bg-surface transition-colors duration-300">
               <span className="font-mono text-label text-muted/50 uppercase tracking-widest">
                 0{i + 1}
               </span>
