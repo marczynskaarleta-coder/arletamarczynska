@@ -80,17 +80,14 @@ export function Header({ locale, nav }: Props) {
                   href={`/${locale}${href}`}
                   className={cn(
                     "relative text-body-sm font-medium transition-colors duration-200 py-1",
-                    active ? "text-ink" : "text-muted hover:text-ink"
+                    active ? "text-ink" : "text-muted hover:text-ink group"
                   )}
                 >
                   {nav[key]}
-                  {active && (
-                    <motion.span
-                      layoutId="nav-underline"
-                      className="absolute bottom-0 left-0 right-0 h-px bg-ink"
-                      transition={{ type: "spring", stiffness: 400, damping: 35 }}
-                    />
-                  )}
+                  <span className={cn(
+                    "absolute bottom-0 left-0 right-0 h-px bg-ink transition-transform duration-200 origin-left",
+                    active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  )} />
                 </Link>
               );
             })}

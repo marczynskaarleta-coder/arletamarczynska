@@ -12,7 +12,7 @@
   --color-accent:  #8c3320;
 
   /* Hero background */
-  --grid-line:     rgba(30, 27, 25, 0.07);
+  --grid-line:     rgba(30, 27, 25, 0.04);
   --hero-glow-1:   rgba(140, 51, 32, 0.09);
   --hero-glow-2:   rgba(30, 27, 25, 0.03);
 }
@@ -25,7 +25,7 @@
   --color-subtle:  #352620;
   --color-accent:  #c46840;
 
-  --grid-line:     rgba(240, 232, 225, 0.05);
+  --grid-line:     rgba(240, 232, 225, 0.03);
   --hero-glow-1:   rgba(196, 104, 64, 0.10);
   --hero-glow-2:   rgba(240, 232, 225, 0.02);
 }
@@ -54,6 +54,16 @@
   ::-webkit-scrollbar          { width: 5px; }
   ::-webkit-scrollbar-track    { background: var(--color-bg); }
   ::-webkit-scrollbar-thumb    { background: var(--color-subtle); border-radius: 3px; }
+
+  /* Focus visible — accessible but subtle */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Base line-height for body text */
+  p, li { line-height: 1.7; }
 }
 
 /* ─── Prose (blog articles) ─────────────────────────────────── */

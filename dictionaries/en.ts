@@ -2,9 +2,9 @@ import type { Dict } from "./pl";
 
 export const dict: Dict = {
   meta: {
-    homeTitle: "Arleta Marczynska, Founder & Operator",
+    homeTitle: "Arleta Marczyńska — TSL, Operations, Processes",
     homeDescription:
-      "Operator and founder. I organise processes, data, and ways of working so that a business runs predictably.",
+      "Operations, processes and solutions in the TSL industry. Experience that brings order to daily business operations.",
   },
   nav: {
     projects: "Projects",

@@ -1,8 +1,8 @@
 export const dict = {
   meta: {
-    homeTitle: "Arleta Marczynska, Founder & Operator",
+    homeTitle: "Arleta Marczyńska — TSL, operacje, procesy",
     homeDescription:
-      "Operator i founder. Porządkuję procesy, dane i sposób pracy tak, żeby firma działała przewidywalnie.",
+      "Operacje, procesy i rozwiązania w branży TSL. Doświadczenie, które porządkuje codzienną pracę firm.",
   },
   nav: {
     projects: "Projekty",

@@ -46,8 +46,11 @@ export function Hero({ dict, about }: Props) {
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <p className="text-body-lg text-muted leading-relaxed max-w-[44ch]">
+              <p className="text-body-lg text-muted leading-relaxed max-w-[52ch]">
                 {about.bio}
+              </p>
+              <p className="mt-3 font-mono text-label text-muted/40 tracking-widest uppercase">
+                Poland / EU
               </p>
             </FadeIn>
 
@@ -94,7 +97,10 @@ export function Hero({ dict, about }: Props) {
                 />
 
                 {/* Photo */}
-                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm bg-subtle">
+                <div
+                  className="relative aspect-[3/4] w-full overflow-hidden rounded-sm bg-subtle"
+                  style={{ boxShadow: "0 10px 30px rgba(0,0,0,0.06)" }}
+                >
                   <Image
                     src="/3.png"
                     alt="Arleta Marczynska"
