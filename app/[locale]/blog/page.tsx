@@ -105,14 +105,18 @@ export default async function BlogPage({ params }: Props) {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 font-mono text-label text-muted hover:text-ink transition-colors duration-200 uppercase tracking-wider whitespace-nowrap"
+                    className={`inline-flex items-center gap-1.5 font-mono text-label uppercase tracking-wider whitespace-nowrap transition-colors duration-200 ${
+                      isPdf(item.href)
+                        ? "text-accent border border-accent/40 hover:border-accent px-2 py-0.5 rounded-sm"
+                        : "text-muted hover:text-ink"
+                    }`}
                   >
                     {isPdf(item.href) ? (
                       <>
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
-                          <rect x="1.5" y="0.5" width="9" height="11" rx="1" stroke="currentColor" strokeWidth="1.1"/>
-                          <path d="M3.5 6.5h5M3.5 8.5h3" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round"/>
-                          <path d="M3.5 3.5h2.5v2H3.5z" stroke="currentColor" strokeWidth="1.1" strokeLinejoin="round"/>
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden>
+                          <rect x="1.5" y="0.5" width="9" height="11" rx="1" stroke="currentColor" strokeWidth="1.2"/>
+                          <path d="M3.5 6.5h5M3.5 8.5h3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+                          <path d="M3.5 3.5h2.5v2H3.5z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
                         </svg>
                         PDF
                       </>
