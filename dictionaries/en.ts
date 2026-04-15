@@ -69,7 +69,7 @@ export const dict: Dict = {
   beyondOps: {
     sectionLabel: "Beyond operations",
     motoLabel: "Meetups",
-    motoTitle: "Biznesowe Złote",
+    motoTitle: "Biznesowe Złote Motocyklowe",
     motoDescription:
       "Informal gatherings for entrepreneurs who also ride.",
     motoStatus: "First meetup 6 June, starting in Andrychów",

@@ -67,7 +67,7 @@ export const dict = {
   beyondOps: {
     sectionLabel: "Poza operacją",
     motoLabel: "Spotkania",
-    motoTitle: "Biznesowe Złote",
+    motoTitle: "Biznesowe Złote Motocyklowe",
     motoDescription:
       "Nieformalne spotkania dla przedsiębiorców, miłośników dwóch kółek.",
     motoStatus: "Pierwsze spotkanie 6 czerwca, start w Andrychowie",

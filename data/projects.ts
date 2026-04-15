@@ -197,14 +197,14 @@ export const projects: Project[] = [
     logo: "/logos/biznesowezloty.png",
     content: {
       pl: {
-        name: "Biznesowe Złote",
+        name: "Biznesowe Złote Motocyklowe",
         shortDescription:
           "Spotkania dla przedsiębiorców i właścicieli firm, skupione na wymianie doświadczeń i budowaniu relacji biznesowych.",
         longDescription:
           "Przestrzeń dla ludzi, którzy prowadzą firmy i chcą rozmawiać o tym, co naprawdę działa.",
       },
       en: {
-        name: "Biznesowe Złote",
+        name: "Biznesowe Złote Motocyklowe",
         shortDescription:
           "Gatherings for entrepreneurs and business owners, focused on sharing experience and building business relationships.",
         longDescription:
