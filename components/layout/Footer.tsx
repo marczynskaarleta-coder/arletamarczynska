@@ -56,6 +56,14 @@ export function Footer({ locale, nav, footer }: Props) {
                 Instagram
               </a>
             </div>
+            <div className="flex gap-4">
+              <Link href={`/${locale}/polityka-prywatnosci`} className="font-mono text-label text-muted/50 hover:text-muted transition-colors duration-200">
+                {locale === "pl" ? "Polityka prywatności" : "Privacy policy"}
+              </Link>
+              <Link href={`/${locale}/regulamin`} className="font-mono text-label text-muted/50 hover:text-muted transition-colors duration-200">
+                {locale === "pl" ? "Regulamin" : "Terms"}
+              </Link>
+            </div>
             <p className="font-mono text-label text-muted/50">
               &copy; {year} {footer.copyright}
             </p>

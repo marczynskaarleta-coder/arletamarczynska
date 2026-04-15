@@ -73,7 +73,7 @@ export const projects: Project[] = [
     year: "2023",
     tags: ["TSL", "magazyn", "logistyka"],
     externalUrl: "https://exportsy.pl/magazyny",
-    logo: "/logos/exportsy.png",
+    logo: "/logos/logo-exstorage.png",
     content: {
       pl: {
         name: "eXstorage",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     year: "2023",
     tags: ["TSL", "promy", "transport"],
     externalUrl: "https://exportsy.pl/exferry",
-    logo: "/logos/exportsy.png",
+    logo: "/logos/logo-exferry.png",
     content: {
       pl: {
         name: "eXferry",
@@ -122,7 +122,7 @@ export const projects: Project[] = [
     tags: ["procesy", "operacje", "automatyzacja"],
     externalUrl: "https://excore.pl",
     featured: true,
-    logo: "/logos/excore.png",
+    logo: "/logos/excore.svg",
     content: {
       pl: {
         name: "eXcore",
@@ -186,6 +186,30 @@ export const projects: Project[] = [
           "An AI readiness test for TSL companies. Find out where your organisation stands before rolling out the first tool.",
         longDescription:
           "Companies deploy AI without any diagnosis. This test shows what is ready and what is blocking real results.",
+      },
+    },
+  },
+  {
+    slug: "biznesowe-zlote",
+    status: "live",
+    year: "2025",
+    tags: ["networking", "biznes", "spotkania"],
+    externalUrl: "https://biznesowezloty.pl",
+    logo: "/logos/biznesowezloty.png",
+    content: {
+      pl: {
+        name: "Biznesowe Złote",
+        shortDescription:
+          "Spotkania dla przedsiębiorców i właścicieli firm, skupione na wymianie doświadczeń i budowaniu relacji biznesowych.",
+        longDescription:
+          "Przestrzeń dla ludzi, którzy prowadzą firmy i chcą rozmawiać o tym, co naprawdę działa.",
+      },
+      en: {
+        name: "Biznesowe Złote",
+        shortDescription:
+          "Gatherings for entrepreneurs and business owners, focused on sharing experience and building business relationships.",
+        longDescription:
+          "A space for people who run companies and want to talk about what actually works.",
       },
     },
   },

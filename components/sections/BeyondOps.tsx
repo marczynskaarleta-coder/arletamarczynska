@@ -22,15 +22,22 @@ export function BeyondOps({ dict }: Props) {
               {dict.motoLabel}
             </span>
             <h3 className="font-serif text-display-md text-ink leading-tight">
-              {dict.motoTitle}
+              <a href="https://biznesowezloty.pl" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-200">
+                {dict.motoTitle}
+              </a>
             </h3>
             <p className="text-body-sm text-muted leading-relaxed flex-1">
               {dict.motoDescription}
             </p>
-            <span className="inline-flex items-center gap-2 font-mono text-label text-accent mt-2">
+            <a
+              href="https://biznesowezloty.pl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono text-label text-accent hover:text-accent/70 mt-2 transition-colors duration-200"
+            >
               <span className="w-1.5 h-1.5 rounded-full bg-accent" />
               {dict.motoStatus}
-            </span>
+            </a>
           </div>
         </FadeIn>
 

@@ -2,7 +2,7 @@ import type { Dict } from "./pl";
 
 export const dict: Dict = {
   meta: {
-    homeTitle: "Arleta Marczynska — Founder & Operator",
+    homeTitle: "Arleta Marczynska, Founder & Operator",
     homeDescription:
       "Operator and founder. I organise processes, data, and ways of working so that a business runs predictably.",
   },
@@ -26,7 +26,7 @@ export const dict: Dict = {
     sectionLabel: "About",
     statement:
       "I combine systems thinking with operational execution. Where a process fails, cost begins.",
-    bio: "I organise processes, data, and ways of working so that a business runs predictably, not by chance.",
+    bio: "With over 16 years in the TSL industry, I combine operational experience with designing processes and tools that genuinely improve how companies work day to day.",
     areasLabel: "Focus areas",
     areas: [
       {
@@ -69,7 +69,7 @@ export const dict: Dict = {
   beyondOps: {
     sectionLabel: "Beyond operations",
     motoLabel: "Meetups",
-    motoTitle: "Business Motorcycle Meetups",
+    motoTitle: "Biznesowe Złote",
     motoDescription:
       "Informal gatherings for entrepreneurs who also ride.",
     motoStatus: "First meetup 6 June, starting in Andrychów",

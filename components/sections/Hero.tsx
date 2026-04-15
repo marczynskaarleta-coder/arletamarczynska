@@ -79,20 +79,24 @@ export function Hero({ dict, locale }: Props) {
           </motion.div>
         </div>
 
-        {/* Scroll hint */}
-        <motion.div
+        {/* Scroll arrow */}
+        <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="hidden md:flex items-center gap-3 mt-8 text-label text-muted/60 uppercase tracking-widest"
+          transition={{ delay: 1.6, duration: 1 }}
+          onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+          aria-label="Przewiń w dół"
+          className="mt-10 flex items-center justify-center w-9 h-9 rounded-full border border-subtle text-muted/50 hover:text-ink hover:border-ink/30 transition-colors duration-200"
         >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-            className="w-px h-10 bg-gradient-to-b from-transparent via-muted/40 to-transparent"
-          />
-          {dict.scrollHint}
-        </motion.div>
+          <motion.svg
+            width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden
+            animate={{ y: [0, 3, 0] }}
+            transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
+          >
+            <path d="M7 3v8M3.5 7.5L7 11l3.5-3.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+          </motion.svg>
+        </motion.button>
+
       </div>
     </section>
   );

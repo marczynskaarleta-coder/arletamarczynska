@@ -27,7 +27,9 @@ export default async function HomePage({ params }: Props) {
   const l = locale as Locale;
   const dict = getDictionary(l);
   const projectsData = localizeProjects(l);
-  const articlesData = localizeArticles(l);
+  const articlesData = localizeArticles(l).sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   return (
     <>

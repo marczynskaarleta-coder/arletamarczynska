@@ -30,13 +30,13 @@ export const articles: Article[] = [
       pl: {
         title: "Kim jest spedytor 2030 roku?",
         excerpt:
-          "Automatyzacja i AI zmieniają tradycyjną rolę spedytora. Jak wyglądać będzie ten zawód za pięć lat — i co oznacza to dla firm TSL?",
+          "Automatyzacja i AI zmieniają tradycyjną rolę spedytora. Jak wyglądać będzie ten zawód za pięć lat, i co oznacza to dla firm TSL?",
         category: "Branża TSL",
       },
       en: {
         title: "Who is the freight forwarder of 2030?",
         excerpt:
-          "Automation and AI are transforming the traditional forwarder role. What will this profession look like in five years — and what does it mean for logistics companies?",
+          "Automation and AI are transforming the traditional forwarder role. What will this profession look like in five years, and what does it mean for logistics companies?",
         category: "Industry",
       },
     },
@@ -54,13 +54,13 @@ export const articles: Article[] = [
       pl: {
         title: "Dlaczego zlecenie z 5% marży to nie sukces, tylko samobójstwo na raty?",
         excerpt:
-          "Niska marża w zleceniach TSL to nie strategia przetrwania — to powolna likwidacja. Dlaczego polskie firmy spedycyjne nadal tak pracują?",
+          "Niska marża w zleceniach TSL to nie strategia przetrwania, to powolna likwidacja. Dlaczego polskie firmy spedycyjne nadal tak pracują?",
         category: "Biznes",
       },
       en: {
-        title: "Why a 5% margin contract is not success — it's slow suicide",
+        title: "Why a 5% margin contract is not success, it's slow suicide",
         excerpt:
-          "Low-margin contracts in freight are not a survival strategy — they're slow liquidation. Why Polish logistics companies still operate this way.",
+          "Low-margin contracts in freight are not a survival strategy, they're slow liquidation. Why Polish logistics companies still operate this way.",
         category: "Business",
       },
     },
@@ -166,13 +166,13 @@ export const articles: Article[] = [
       pl: {
         title: "Sztuczna inteligencja na kołach",
         excerpt:
-          "AI w TSL — od optymalizacji tras po autonomiczne pojazdy. Co jest już dziś wdrażane, a co pozostaje marketingowym szumem?",
+          "AI w TSL, od optymalizacji tras po autonomiczne pojazdy. Co jest już dziś wdrażane, a co pozostaje marketingowym szumem?",
         category: "Technologia",
       },
       en: {
         title: "Artificial intelligence on wheels",
         excerpt:
-          "AI in freight and logistics — from route optimisation to autonomous vehicles. What is being deployed today, and what remains marketing noise?",
+          "AI in freight and logistics, from route optimisation to autonomous vehicles. What is being deployed today, and what remains marketing noise?",
         category: "Technology",
       },
     },
@@ -190,13 +190,13 @@ export const articles: Article[] = [
       pl: {
         title: "Oszustwa w branży TSL",
         excerpt:
-          "Zorganizowana przestępczość w logistyce — kradzieże ładunków, fałszywi operatorzy i wymuszenia. Jak się przed tym chronić?",
+          "Zorganizowana przestępczość w logistyce, kradzieże ładunków, fałszywi operatorzy i wymuszenia. Jak się przed tym chronić?",
         category: "Bezpieczeństwo",
       },
       en: {
         title: "Fraud in the TSL industry",
         excerpt:
-          "Organised crime in logistics — cargo theft, fraudulent operators, and extortion schemes. How to protect your business.",
+          "Organised crime in logistics, cargo theft, fraudulent operators, and extortion schemes. How to protect your business.",
         category: "Security",
       },
     },
@@ -214,13 +214,13 @@ export const articles: Article[] = [
       pl: {
         title: "LLM-speak: kiedy ludzie zaczynają brzmieć jak maszyny",
         excerpt:
-          "Coraz więcej tekstów brzmi tak samo — gładko, pusto i przewidywalnie. Co dzieje się z ludzkim językiem w epoce modeli językowych?",
+          "Coraz więcej tekstów brzmi tak samo, gładko, pusto i przewidywalnie. Co dzieje się z ludzkim językiem w epoce modeli językowych?",
         category: "AI",
       },
       en: {
         title: "LLM-speak: when people start sounding like machines",
         excerpt:
-          "More and more writing sounds identical — smooth, empty, predictable. What is happening to human language in the age of language models?",
+          "More and more writing sounds identical, smooth, empty, predictable. What is happening to human language in the age of language models?",
         category: "AI",
       },
     },
@@ -238,13 +238,13 @@ export const articles: Article[] = [
       pl: {
         title: "Zmiany prawne w branży TSL w 2026 roku",
         excerpt:
-          "Co zmienia się w logistyce międzynarodowej — system ELO, CBAM i ich wpływ na operacje spedycyjne.",
+          "Co zmienia się w logistyce międzynarodowej, system ELO, CBAM i ich wpływ na operacje spedycyjne.",
         category: "Prawo",
       },
       en: {
         title: "Legal changes in TSL 2026",
         excerpt:
-          "What's changing in international logistics — the ELO system, CBAM, and their impact on freight operations.",
+          "What's changing in international logistics, the ELO system, CBAM, and their impact on freight operations.",
         category: "Regulation",
       },
     },
@@ -260,13 +260,13 @@ export const articles: Article[] = [
     source: "exportsy",
     content: {
       pl: {
-        title: "Bezpieczeństwo w logistyce — nowe wyzwania dla branży TSL",
+        title: "Bezpieczeństwo w logistyce, nowe wyzwania dla branży TSL",
         excerpt:
           "Ocena współczesnych zagrożeń bezpieczeństwa w europejskim transporcie i logistyce.",
         category: "Bezpieczeństwo",
       },
       en: {
-        title: "Security in logistics — new challenges for TSL",
+        title: "Security in logistics, new challenges for TSL",
         excerpt:
           "An assessment of contemporary security risks affecting European transport and logistics operations.",
         category: "Security",

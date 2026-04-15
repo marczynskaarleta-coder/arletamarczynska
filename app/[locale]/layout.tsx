@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { BackToTop } from "@/components/ui/BackToTop";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 import { SetHtmlLang } from "@/components/ui/SetHtmlLang";
 import { getDictionary } from "@/dictionaries";
 import { locales, isValidLocale, type Locale } from "@/lib/i18n";
@@ -24,7 +26,7 @@ export async function generateMetadata({ params }: Omit<Props, "children">): Pro
   const ogLocale = locale === "pl" ? "pl_PL" : "en_US";
   const altLocale = locale === "pl" ? "en_US" : "pl_PL";
   return {
-    title: { default: dict.meta.homeTitle, template: `%s — Arleta Marczynska` },
+    title: { default: dict.meta.homeTitle, template: `%s | Arleta Marczynska` },
     description: dict.meta.homeDescription,
     authors: [{ name: profile.name, url: siteConfig.url }],
     creator: profile.name,
@@ -73,6 +75,8 @@ export default async function LocaleLayout({ children, params }: Props) {
       <Header locale={locale as Locale} nav={dict.nav} />
       <main>{children}</main>
       <Footer locale={locale as Locale} nav={dict.nav} footer={dict.footer} />
+      <BackToTop />
+      <CookieBanner />
     </>
   );
 }

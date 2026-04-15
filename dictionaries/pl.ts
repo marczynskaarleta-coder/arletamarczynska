@@ -1,6 +1,6 @@
 export const dict = {
   meta: {
-    homeTitle: "Arleta Marczynska — Founder & Operator",
+    homeTitle: "Arleta Marczynska, Founder & Operator",
     homeDescription:
       "Operator i founder. Porządkuję procesy, dane i sposób pracy tak, żeby firma działała przewidywalnie.",
   },
@@ -24,7 +24,7 @@ export const dict = {
     sectionLabel: "Kim jestem",
     statement:
       "Łączę myślenie systemowe z egzekucją operacyjną. Tam, gdzie proces nie działa, zaczyna się koszt.",
-    bio: "Porządkuję procesy, dane i sposób pracy tak, żeby firma działała przewidywalnie, nie przypadkowo.",
+    bio: "Od ponad 16 lat działam w branży TSL, łącząc doświadczenie operacyjne z projektowaniem procesów i narzędzi, które realnie usprawniają codzienną pracę firm.",
     areasLabel: "Obszary działania",
     areas: [
       {
@@ -67,7 +67,7 @@ export const dict = {
   beyondOps: {
     sectionLabel: "Poza operacją",
     motoLabel: "Spotkania",
-    motoTitle: "Biznesowe Spotkania Motocyklowe",
+    motoTitle: "Biznesowe Złote",
     motoDescription:
       "Nieformalne spotkania dla przedsiębiorców, miłośników dwóch kółek.",
     motoStatus: "Pierwsze spotkanie 6 czerwca, start w Andrychowie",
