@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Divider } from "@/components/ui/Divider";
+import { ContactForm } from "@/components/ui/ContactForm";
 import { getDictionary } from "@/dictionaries";
 import { isValidLocale, type Locale } from "@/lib/i18n";
 import { profile } from "@/data/profile";
@@ -80,51 +81,7 @@ export default async function KontaktPage({ params }: Props) {
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <form
-            action={`mailto:${profile.contact.email}`}
-            method="get"
-            encType="text/plain"
-            className="flex flex-col gap-6"
-          >
-            {(
-              [
-                { id: "name",  label: d.formNameLabel,  placeholder: d.formNamePlaceholder,  type: "text",  name: "name"  },
-                { id: "email", label: d.formEmailLabel, placeholder: d.formEmailPlaceholder, type: "email", name: "email" },
-              ] as const
-            ).map((f) => (
-              <div key={f.id} className="flex flex-col gap-2">
-                <label htmlFor={f.id} className="font-mono text-label text-muted uppercase tracking-wider">{f.label}</label>
-                <input
-                  id={f.id}
-                  name={f.name}
-                  type={f.type}
-                  required
-                  placeholder={f.placeholder}
-                  className="bg-transparent border-b border-subtle focus:border-ink outline-none py-3 text-body-sm text-ink placeholder:text-muted/40 transition-colors duration-200"
-                />
-              </div>
-            ))}
-
-            <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="font-mono text-label text-muted uppercase tracking-wider">{d.formMessageLabel}</label>
-              <textarea
-                id="message"
-                name="body"
-                rows={5}
-                required
-                placeholder={d.formMessagePlaceholder}
-                className="bg-transparent border-b border-subtle focus:border-ink outline-none py-3 text-body-sm text-ink placeholder:text-muted/40 transition-colors duration-200 resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="self-start mt-2 inline-flex items-center gap-2 font-medium text-body-sm text-ink border border-ink/20 hover:border-ink px-6 py-3 rounded-sm transition-colors duration-200"
-            >
-              {d.formSubmitLabel} &rarr;
-            </button>
-            <p className="text-label text-muted/60">{d.formNote}</p>
-          </form>
+          <ContactForm dict={d} email={profile.contact.email} />
         </FadeIn>
       </div>
     </div>
